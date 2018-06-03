@@ -1,0 +1,50 @@
+
+<script src="login.component.ts"></script>
+<BR>
+  <BR>
+    <BR>
+      <BR>
+      
+  <form>
+    <div class="row">
+        <div class="col-sm-5"></div>
+      <div class="col-sm-3">
+      <input name="email" type="text" placeholder="Email" id="email"
+      [(ngModel)]="login.email">
+    </div>
+  </div>
+  <BR>
+   
+  <div class="row">
+      <div class="col-sm-5"></div>
+    <div class="col-sm-3">
+      <input name="password" type="password" id="password"
+        placeholder="Contraseña" [(ngModel)]="login.password">
+    </div>
+    </div>
+    <BR>
+    <div class="row">
+        <div class="col-sm-5"></div>
+      <div class="col-sm-3">
+          <button  class="btn btn-success" (click)="search()">Iniciar sesión</button>
+        </div>
+      </div>
+  </form>
+
+<div class="row">
+  <div class="col-sm-3"></div>
+<div class="col-sm-6">
+  <table class="table table-bordered table-striped" style="margin-top: 20px;">
+   <thead>
+      <tr>
+        <td>Role del Usuario</td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let role of roles">
+          <td class="active" style="text-align: center;">{{role.name_role}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+</div>
