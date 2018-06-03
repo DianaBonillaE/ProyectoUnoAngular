@@ -10,6 +10,8 @@ import { LoginService } from './login/login-service';
 import { AppRoutingModule} from './app.routing.module';
 import { HomeComponent } from './home/home.component';
 import { HomeService } from './home/home-service';
+import { FillCartComponent } from './fill-cart/fill-cart.component';
+import { FillCartService } from './fill-cart/fill-cart-service';
 
 
 
@@ -17,7 +19,8 @@ import { HomeService } from './home/home-service';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    FillCartComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,7 @@ import { HomeService } from './home/home-service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService],
+  providers: [LoginService,HomeService,FillCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
