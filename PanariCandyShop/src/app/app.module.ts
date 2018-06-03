@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { HomeService } from './home/home-service';
 import { FillCartComponent } from './fill-cart/fill-cart.component';
 import { FillCartService } from './fill-cart/fill-cart-service';
+import { CartComponent } from './cart/cart.component';
+import { ProductService } from './cart/product-service';
 
 
 
@@ -20,7 +22,9 @@ import { FillCartService } from './fill-cart/fill-cart-service';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    FillCartComponent
+    FillCartComponent,
+    CartComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { FillCartService } from './fill-cart/fill-cart-service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService],
+  providers: [LoginService,HomeService,FillCartService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

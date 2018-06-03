@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {Login} from '../Models/login';
 import { Role } from '../Models/role';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -30,3 +31,5 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+

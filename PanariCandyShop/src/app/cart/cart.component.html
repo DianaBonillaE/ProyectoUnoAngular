@@ -1,0 +1,29 @@
+<div class="container">
+  <br>
+  <div *ngFor="let prod of products">
+    <div class="panel panel-success class">
+      <div class="panel-heading">
+
+      </div>
+      <div class="panel-body">
+        <div class="row">
+
+          <div class="col-sm-4" style="border-color: #0E8E99;">
+            <table style="height: 5%;" align="center" class="table table-striped table-responsive table-condensed">
+              <tbody>
+                <td>
+                  <tr>{{prod.productName}}</tr>
+                  <tr>{{prod.description}}</tr>
+                  <tr>{{prod.price}}</tr>
+                  <tr>
+                    <a class="btn btn-danger" role="button" href="">Eliminar</a>
+                  </tr>
+                </td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
