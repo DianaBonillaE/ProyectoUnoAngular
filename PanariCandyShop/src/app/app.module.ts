@@ -14,6 +14,7 @@ import { FillCartComponent } from './fill-cart/fill-cart.component';
 import { FillCartService } from './fill-cart/fill-cart-service';
 import { CartComponent } from './cart/cart.component';
 import { ProductService } from './cart/product-service';
+import { ReportCustomersComponent } from './report-customers/report-customers.component';
 
 
 
@@ -24,6 +25,7 @@ import { ProductService } from './cart/product-service';
     HomeComponent,
     FillCartComponent,
     CartComponent,
+    ReportCustomersComponent,
     
   ],
   imports: [
