@@ -2,6 +2,7 @@
 import { Injectable } from "@angular/core";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { Environment } from "../app.environment";
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ReportCustomersService{
