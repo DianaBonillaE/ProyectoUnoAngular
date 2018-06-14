@@ -18,7 +18,7 @@ product: Product = new Product;
   }
 
   showCart(){
-    this.service.showCart(this.product.productId).subscribe(
+    this.service.productById(this.product.productId).subscribe(
       (data: Product) => {
         this.product = data;
       }

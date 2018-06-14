@@ -5,14 +5,15 @@ import {LoginComponent} from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FillCartComponent } from './fill-cart/fill-cart.component';
 import { CartComponent } from './cart/cart.component';
+import { PrincipalComponent } from './principal/principal.component';
 
 const routes: Routes = [
     {path:'search-login',component: LoginComponent},
     {path:'search-home',component: HomeComponent},
     {path:'search-fillCart',component: FillCartComponent},
-    {path: 'search-cart', component: CartComponent}
-   
-];
+    {path: 'search-cart', component: CartComponent},
+    {path: 'principal', component: PrincipalComponent}
+   ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
