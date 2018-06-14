@@ -12,7 +12,7 @@ import { ReportCustomersComponent} from './report-customers/report-customers.com
 const routes: Routes = [
     {path:'search-login',component: LoginComponent},
     {path:'search-home',component: HomeComponent},
-    {path:'search-fillCart',component: FillCartComponent},
+    {path:'fill-cart',component: FillCartComponent},
     {path: 'search-cart', component: CartComponent},
     {path: 'principal', component: PrincipalComponent},
     {path: 'report-customers', component: ReportCustomersComponent}

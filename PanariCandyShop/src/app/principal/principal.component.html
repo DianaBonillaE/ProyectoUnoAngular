@@ -1,3 +1,4 @@
 <script src="principal.component.ts"></script>
 
-<button *ngFor="let product of products" (click)="productById()">{{product.productId}}</button>
+<h2 *ngFor="let product of products">{{product.productName}}</h2>
+<button routerLink="/fill-cart" >Ver informacion</button>
