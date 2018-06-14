@@ -15,6 +15,7 @@ import { FillCartService } from './fill-cart/fill-cart-service';
 import { CartComponent } from './cart/cart.component';
 import { ProductService } from './cart/product-service';
 import { PrincipalComponent } from './principal/principal.component';
+import { ReportCustomersComponent } from './report-customers/report-customers.component';
 
 
 
@@ -26,6 +27,7 @@ import { PrincipalComponent } from './principal/principal.component';
     FillCartComponent,
     CartComponent,
     PrincipalComponent,
+    ReportCustomersComponent,
     
   ],
   imports: [
