@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <title>Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background:url(http://mfs1.cdnsw.com/fs/Utilitaires/9dtsq-degrade_3.png); background-size: 100%" >
+<div class="container" >
+  <div class="jumbotron" style="width:40%">
+    <h2>Registrate</h2>  
+    <h3>Datos personales</h3>      
+    <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Email" required [(ngModel)]="user.email">
+    </div>  
+    <div class="form-group">
+        <input type="text" class="form-control" id="firstName" placeholder="Nombre" required [(ngModel)]="user.firstName">
+    </div>  
+    <div class="form-group">
+        <input type="text" class="form-control" id="lastName" placeholder="Apellidos" required [(ngModel)]="user.lastName">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="password" placeholder="Contraseña" required [(ngModel)]="user.password">
+    </div> 
+    <h3>Dirección</h3>  
+    <div class="form-group">
+        <input type="text" class="form-control" id="country" placeholder="País" required [(ngModel)]="user.country">
+    </div> 
+    <div class="form-group">
+        <input type="text" class="form-control" id="province" placeholder="Provincia" required [(ngModel)]="user.province">
+    </div> 
+    <div class="form-group">
+        <input type="text" class="form-control" id="canton" placeholder="Canton" required [(ngModel)]="user.canton">
+    </div> 
+    <div class="form-group">
+        <input type="text" class="form-control" id="district" placeholder="Distrito" required [(ngModel)]="user.district">
+    </div>   
+    <div class="form-group">
+        <input type="text" class="form-control" id="postalCode" placeholder="Codigo postal" required [(ngModel)]="user.postalCode">
+    </div>  
+    <button type="submit" class="btn btn-success">Registrarse</button>
+  </div>
+</div>
+</body>
+</html>
