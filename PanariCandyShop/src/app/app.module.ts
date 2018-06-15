@@ -10,33 +10,31 @@ import { LoginService } from './login/login-service';
 import { AppRoutingModule} from './app.routing.module';
 import { HomeComponent } from './home/home.component';
 import { HomeService } from './home/home-service';
-import { FillCartComponent } from './fill-cart/fill-cart.component';
-import { FillCartService } from './fill-cart/fill-cart-service';
+import { FillCartService } from './cart/fill-cart-service';
 import { CartComponent } from './cart/cart.component';
 import { ProductService } from './cart/product-service';
 import { PrincipalComponent } from './principal/principal.component';
 import { ReportCustomersComponent } from './report-customers/report-customers.component';
-
-
+import { InsertProductComponent } from './insert-product/insert-product.component';
+import { InsertService } from './insert-product/insert.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    FillCartComponent,
     CartComponent,
     PrincipalComponent,
     ReportCustomersComponent,
-    
-  ],
+    InsertProductComponent,
+      ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService,ProductService],
+  providers: [LoginService,HomeService,FillCartService,ProductService,InsertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

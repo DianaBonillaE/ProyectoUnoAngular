@@ -15,9 +15,15 @@ export class FillCartService{
 
   private url = Environment.apiUrl + this.requestMapping;
 
-  public productById(productId: string){
+  public getAll(){
     //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
-    return this.http.get(this.url  + 1);
+    return this.http.get(this.url );
   }
+
+  public add(productID){
+    return this.http.get(this.url + "addCart/" + productID);
+  }
+
+
 
 };
