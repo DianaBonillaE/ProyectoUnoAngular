@@ -17,11 +17,19 @@
         <br>
         <br>
         <div class="col-sm-4">
-          <select class="form-control" id="sel1">
-            <option>Seleccione el mes a buscar</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+          <select class="form-control" id="sel1" placeholder="Seleccione el mes a consultar">
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
           </select>
         </div>
         <div class="col-sm-4"></div>
@@ -32,8 +40,9 @@
       </div>
       <br>
       
-		<label>Buscar Asistente: </label><input id="buscarCliente" type="text" placeholder="Buscar Clientes"/>
-		<div class= "table-responsive">
+		<label>Buscar Cliente: </label><input id="buscarCliente" type="text" placeholder="Buscar Clientes"/>
+    <br>
+    <div class= "table-responsive">
 			<table class="table table-bordered">
 				<thead>
 					<tr>
@@ -44,12 +53,8 @@
 					</tr>
 				</thead>
 				<tbody id="tablaClientes">
+					<tr *ngFor="let item of ">
 
-					<tr th:each="Asistente, iterStat : ${mostrarAsistentes}">
-            <td>Daniel</td>
-            <td>Hernandez</td>
-            <td>dhernandezleiva@gmail.com</td>
-            <td>4500</td>
 					</tr>
 				</tbody>
 			</table>

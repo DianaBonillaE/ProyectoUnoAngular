@@ -18,6 +18,8 @@ import { ReportCustomersComponent } from './report-customers/report-customers.co
 import { InsertProductComponent } from './insert-product/insert-product.component';
 import { InsertService } from './insert-product/insert.service';
 import { ClientReportComponent } from './client-report/client-report.component';
+import { ClientReportService } from './client-report/client-report-service';
+import { ReportProductsComponent } from './report-products/report-products.component';  
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { ClientReportComponent } from './client-report/client-report.component';
     ReportCustomersComponent,
     InsertProductComponent,
     ClientReportComponent,
+    ReportProductsComponent,
       ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { ClientReportComponent } from './client-report/client-report.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService,ProductService,InsertService],
+  providers: [LoginService,HomeService,FillCartService,ProductService,InsertService, ClientReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

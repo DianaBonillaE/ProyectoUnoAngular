@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientReport } from '../Models/client-report';
+import { ClientReportService } from './client-report-service';
 
 @Component({
   selector: 'app-client-report',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientReportComponent implements OnInit {
 
-  constructor() { }
+  private reports: ClientReport[] = new Array<ClientReport>();
+
+  constructor(private clientReportService: ClientReportService) {
+    
+   }
 
   ngOnInit() {
   }
