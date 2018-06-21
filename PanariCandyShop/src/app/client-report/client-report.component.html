@@ -1,0 +1,73 @@
+<script>
+    $(document).ready(function(){
+      $("#buscarCliente").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tablaClientes tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>    
+
+<div class="panel panel-heading" align="center">
+		<h1>Reporte mensual de compras por cliente</h1>
+	</div>
+	<div class="container">
+		<div class="row">
+        <br>
+        <br>
+        <div class="col-sm-4">
+          <select class="form-control" id="sel1">
+            <option>Seleccione el mes a buscar</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-primary">PDF</button>
+            <button type="button" class="btn btn-success">Excel</button>
+        </div>
+      </div>
+      <br>
+      
+		<label>Buscar Asistente: </label><input id="buscarCliente" type="text" placeholder="Buscar Clientes"/>
+		<div class= "table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+						<th>Cantidad de compras</th>
+					</tr>
+				</thead>
+				<tbody id="tablaClientes">
+
+					<tr th:each="Asistente, iterStat : ${mostrarAsistentes}">
+            <td>Daniel</td>
+            <td>Hernandez</td>
+            <td>dhernandezleiva@gmail.com</td>
+            <td>4500</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

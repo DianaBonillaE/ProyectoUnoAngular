@@ -17,6 +17,7 @@ import { PrincipalComponent } from './principal/principal.component';
 import { ReportCustomersComponent } from './report-customers/report-customers.component';
 import { InsertProductComponent } from './insert-product/insert-product.component';
 import { InsertService } from './insert-product/insert.service';
+import { ClientReportComponent } from './client-report/client-report.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { InsertService } from './insert-product/insert.service';
     PrincipalComponent,
     ReportCustomersComponent,
     InsertProductComponent,
+    ClientReportComponent,
       ],
   imports: [
     BrowserModule,
