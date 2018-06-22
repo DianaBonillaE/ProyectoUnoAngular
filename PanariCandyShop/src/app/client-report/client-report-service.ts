@@ -4,20 +4,18 @@ import { Observable } from 'rxjs/Observable';
 import {Environment} from '../app.environment';
 
 @Injectable()
-export class FillCartService{
+export class ClientReportService{
+
     httpOptions = {
         headers : new HttpHeaders({'Content-Type': 'application/json'})
     };
 
     constructor(private http: HttpClient) {}
 
-  private requestMapping = 'product/';
+    private requestMaping = "report/";
+    private url = Environment.apiUrl + this.requestMaping;
 
-  private url = Environment.apiUrl + this.requestMapping;
-
-  public productById(productId: string){
-    //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
-    return this.http.get(this.url  + 1);
-  }
-
-};
+    public seacrhClients(month: number){
+        return this.http.get(this.url + month);
+    }
+}

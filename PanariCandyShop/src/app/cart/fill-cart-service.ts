@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import {Environment} from '../app.environment';
 
 @Injectable()
-export class ProductService{
+export class FillCartService{
     httpOptions = {
         headers : new HttpHeaders({'Content-Type': 'application/json'})
     };
@@ -15,13 +15,15 @@ export class ProductService{
 
   private url = Environment.apiUrl + this.requestMapping;
 
-  public getAll() {
-    return this.http.get(this.url +"onCart/");
+  public getAll(){
+    //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
+    return this.http.get(this.url);
   }
 
-  public delete(productID){
-    return this.http.get(this.url +"delete/" +productID);
+  public add(productID){
+    return this.http.get(this.url + "addCart/" + productID);
   }
- 
+
+
 
 };
