@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
-
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login-service';
@@ -19,7 +17,11 @@ import { InsertProductComponent } from './insert-product/insert-product.componen
 import { InsertService } from './insert-product/insert.service';
 import { ClientReportComponent } from './client-report/client-report.component';
 import { ClientReportService } from './client-report/client-report-service';
-import { ReportProductsComponent } from './report-products/report-products.component';  
+import { ReportProductsComponent } from './report-products/report-products.component'; 
+import { RegisterComponent } from './register/register.component';
+import { RegisterService } from './register/register-service';
+import { ProductCategoryComponent } from './product-category/product-category.component';
+import { ProductCategoryService } from './product-category/product-category-service'; 
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ReportProductsComponent } from './report-products/report-products.compo
     InsertProductComponent,
     ClientReportComponent,
     ReportProductsComponent,
+    RegisterComponent,
+    ProductCategoryComponent,
       ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ import { ReportProductsComponent } from './report-products/report-products.compo
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService,ProductService,InsertService, ClientReportService],
+  providers: [LoginService,HomeService,FillCartService,ProductService,InsertService, ClientReportService,RegisterService,ProductCategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

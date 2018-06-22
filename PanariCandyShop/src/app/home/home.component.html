@@ -1,61 +1,82 @@
-
 <script src="home.component.ts"></script>
-    
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-    
-      <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-          <form>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
-                  <i class="glyphicon glyphicon-search"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-sm-4"><button type="button" class="btn btn-info">Cart</button></div>
-      </div>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/search-home">Panari's Candy Shop</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/search-register">
+            <span class="glyphicon glyphicon-user"></span>Registrarse</a>
+        </li>
+        <li>
+          <a href="/search-login">
+            <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+        </li>
+        <li>
+          <a href="/search-cart">Carrito</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
 
-      <br>
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="http://img2.vetton.ru//upl/1000/4/vetton_ru_wallpackbyvs25604-1920x1200.jpg" alt="" style="background-size: 100%">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <form>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
         </div>
-    
-        <div class="item">
-          <img src="https://cbsnews3.cbsistatic.com/hub/i/r/2012/03/26/d2c9ec55-1c50-11e3-9918-005056850598/thumbnail/1200x630/8c1cee09ff3bb304c2cecd5010a174ef/ChildDiet.jpg" alt="" style="background-size: 50%">
-        </div>
-    
-        <div class="item">
-          <img src="https://k-botanas.com/wp-content/uploads/2016/08/Goma-gota-grande.jpg" alt="" style="background-size: 100%">-->
-        </div>
-      </div>
-    
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      </form>
+    </div>
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-info">Cart</button>
+    </div>
+  </div>
+
+  <br>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="http://img2.vetton.ru//upl/1000/4/vetton_ru_wallpackbyvs25604-1920x1200.jpg" alt="" style="background-size: 100%">
     </div>
 
-    <div class="container-fluid bg-2 text-center">
-        <h3 class="margin">Panari's Candy Shop</h3>
-        <p>La mejor tienda de dulces al alcance de un click </p>
-      </div>
+    <div class="item">
+      <img src="https://cbsnews3.cbsistatic.com/hub/i/r/2012/03/26/d2c9ec55-1c50-11e3-9918-005056850598/thumbnail/1200x630/8c1cee09ff3bb304c2cecd5010a174ef/ChildDiet.jpg"
+        alt="" style="background-size: 50%">
+    </div>
 
- 
+    <div class="item">
+      <img src="https://k-botanas.com/wp-content/uploads/2016/08/Goma-gota-grande.jpg" alt="" style="background-size: 100%">-->
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">Panari's Candy Shop</h3>
+  <p>La mejor tienda de dulces al alcance de un click </p>
+</div>

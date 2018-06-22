@@ -14,15 +14,39 @@
         background: url(http://mfs1.cdnsw.com/fs/Utilitaires/9dtsq-degrade_3.png);
         background-size: 100%;
     }
+
     .btn-ttc,
     .btn-ttc:hover,
-    .btn-ttc:active{
+    .btn-ttc:active {
         background-color: #1abc9c !important;
         color: snow;
         margin-left: 40%;
     }
 </style>
+
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/search-home">Panari's Candy Shop</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/search-register">
+                            <span class="glyphicon glyphicon-user"></span>Registrarse</a>
+                    </li>
+                    <li>
+                        <a href="/search-login">
+                            <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+                    </li>
+                    <li>
+                        <a href="/search-cart">Carrito</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <br>
     <div class="row">
         <div class="col-sm-4"></div>
@@ -31,35 +55,35 @@
                 <div class="panel-heading">
                     <h2 style="text-align: center">Registrate</h2>
                     <h3>Datos personales:</h3>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="email" class="form-control" id="email" placeholder="Email" required [(ngModel)]="user.email">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="firstName" placeholder="Nombre" required [(ngModel)]="user.firstName">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="lastName" placeholder="Apellidos" required [(ngModel)]="user.lastName">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="password" placeholder="Contraseña" required [(ngModel)]="user.password">
-                        </div>
-                        <h3>Dirección:</h3>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="country" placeholder="País" required [(ngModel)]="user.country">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="province" placeholder="Provincia" required [(ngModel)]="user.province">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="canton" placeholder="Canton" required [(ngModel)]="user.canton">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="district" placeholder="Distrito" required [(ngModel)]="user.district">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="postalCode" placeholder="Codigo postal" required [(ngModel)]="user.postalCode">
-                        </div>
-                        <a href="/search-login" type="submit" class="btn btn-ttc" (click)="insert()">Registrarse</a>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="email" class="form-control" id="email" placeholder="Email" required [(ngModel)]="user.email">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="firstName" placeholder="Nombre" required [(ngModel)]="user.firstName">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="lastName" placeholder="Apellidos" required [(ngModel)]="user.lastName">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="password" placeholder="Contraseña" required [(ngModel)]="user.password">
+                    </div>
+                    <h3>Dirección:</h3>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="country" placeholder="País" required [(ngModel)]="user.country">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="province" placeholder="Provincia" required [(ngModel)]="user.province">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="canton" placeholder="Canton" required [(ngModel)]="user.canton">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="district" placeholder="Distrito" required [(ngModel)]="user.district">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="postalCode" placeholder="Codigo postal" required [(ngModel)]="user.postalCode">
+                    </div>
+                    <a href="/search-login" type="submit" class="btn btn-ttc" (click)="insert()">Registrarse</a>
                 </div>
             </div>
         </div>
