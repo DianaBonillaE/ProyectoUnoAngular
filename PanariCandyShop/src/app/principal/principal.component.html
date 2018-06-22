@@ -1,5 +1,26 @@
 <script src="principal.component.ts"></script>
-
+<nav class="navbar navbar-default">
+  <div class="container">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="/search-home">Panari's Candy Shop</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="/search-register">
+                      <span class="glyphicon glyphicon-user"></span>Registrarse</a>
+              </li>
+              <li>
+                  <a href="/search-login">
+                      <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+              </li>
+              <li>
+                  <a href="/search-cart">Carrito</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
 <div class="container">
     <br>
     <div *ngFor="let prod of products">
@@ -25,10 +46,10 @@
                         <div class="col-sm-8"></div>
                         <div class="col-sm-4" style="border-color: #0E8E99;">
                     <tr>
-                    <input type="number" min="0" max="{{prod.unitsOnStock}}">
+                    <input type="number" min="0" max="{{prod.unitsOnStock}}" name="units" id="units" [(ngModel)]="units">
                     <BR>
                         <BR>
-                      <a class="btn btn-info" role="button" (click)="add(prod.productId)" >Añadir</a>
+                      <a class="btn btn-info" role="button" (click)="add(prod.productId,units)" >Añadir</a>
                     </tr>
                     </div>
                     </div>

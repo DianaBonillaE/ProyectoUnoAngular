@@ -14,6 +14,7 @@ export class LoginService{
   private requestMapping = 'auth/';
 
   private url = Environment.apiUrl + this.requestMapping;
+  
   public search(email: string, password: string){
     //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
     return this.http.get(this.url  + email + '/' + password);

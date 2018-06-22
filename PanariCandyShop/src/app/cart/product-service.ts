@@ -16,12 +16,19 @@ export class ProductService{
   private url = Environment.apiUrl + this.requestMapping;
 
   public getAll() {
-    return this.http.get(this.url +"onCart/");
-  }
-
-  public delete(productID){
-    return this.http.get(this.url +"delete/" +productID);
-  }
- 
-
+    var sesion = localStorage.getItem('sesion');
+    if(sesion==null || sesion==''){
+      return this.http.get(Environment.apiUrl +'cart/onCart/'+'null');
+    }else{
+      return this.http.get(Environment.apiUrl +'cart/onCart/'+sesion);
+    }
+  };
+  public delete(detailId){
+    var sesion = localStorage.getItem('sesion');
+    if(sesion==null || sesion==''){
+      return this.http.get(Environment.apiUrl +"cart/delete/" +detailId +'/'+'vacio');
+    }else{
+      return this.http.get(Environment.apiUrl +"cart/delete/" +detailId +'/'+sesion);
+    }
+  };
 };

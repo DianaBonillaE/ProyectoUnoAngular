@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FillCartService } from '../cart/fill-cart-service';
 import {Router} from '@angular/router';
 import { Product } from '../Models/product';
+import { OrderDetail } from '../Models/orderDetail';
 
 @Component({
   selector: 'app-principal',
@@ -10,8 +11,8 @@ import { Product } from '../Models/product';
 })
 export class PrincipalComponent implements OnInit {
 
+  orderDetails: OrderDetail[] = new Array<OrderDetail>();
   products: Product[] = new Array<Product>();
-  product: Product = new Product;
 
   constructor(private router:Router, private service: FillCartService) { }
 
@@ -23,11 +24,10 @@ export class PrincipalComponent implements OnInit {
     );
   }
    
-  add(productI){
-  
-    this.service.add(productI).subscribe(
-      (data: Product[]) => {
-        this.products = data;
+  add(productI,units){
+    this.service.add(productI,units).subscribe(
+      (data: OrderDetail[]) => {
+        this.orderDetails = data;
       }
     );
 

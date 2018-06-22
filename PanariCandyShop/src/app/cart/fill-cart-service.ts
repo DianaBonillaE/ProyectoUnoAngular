@@ -11,19 +11,18 @@ export class FillCartService{
 
     constructor(private http: HttpClient) {}
 
-  private requestMapping = 'product/';
+  private requestMapping = 'cart/';
 
   private url = Environment.apiUrl + this.requestMapping;
-
+   
   public getAll(){
-    //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
-    return this.http.get(this.url);
+
+      return this.http.get(Environment.apiUrl + 'product/');
+   
+  //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
   }
 
-  public add(productID){
-    return this.http.get(this.url + "addCart/" + productID);
-  }
-
-
-
+  public add(productID, units: string){
+    return this.http.get(this.url + "addCart/" + productID + "/"+units);
+  };
 };

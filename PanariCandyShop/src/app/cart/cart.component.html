@@ -1,8 +1,29 @@
 <script src="cart.component.ts"></script>
-
+<nav class="navbar navbar-default">
+  <div class="container">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="/search-home">Panari's Candy Shop</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="/search-register">
+                      <span class="glyphicon glyphicon-user"></span>Registrarse</a>
+              </li>
+              <li>
+                  <a href="/search-login">
+                      <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+              </li>
+              <li>
+                  <a href="/search-cart">Carrito</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
 <div class="container">
   <br>
-  <div *ngFor="let prod of products">
+  <div *ngFor="let order of orderDetails">
     <div class="panel panel-success class">
       <div class="panel-heading">
 
@@ -14,11 +35,12 @@
             <table style="height: 5%;" align="center" class="table table-striped table-responsive table-condensed">
               <tbody>
                 <td>
-                  <tr>{{prod.productName}}</tr>
-                  <tr>{{prod.description}}</tr>
-                  <tr>{{prod.price}}</tr>
+                  <tr>Nombre del producto: {{order.product.productName}}</tr>
+                  <tr>Descripcion: {{order.product.description}}</tr>
+                  <tr>Precio por unidad: {{order.product.price}}</tr>
+                  <tr>Cantidad: {{order.quantity}}</tr>
                   <tr>
-                    <a class="btn btn-danger" role="button" (click)="delete(prod.productId)">Eliminar</a>
+                    <a class="btn btn-danger" role="button" (click)="delete(order.orderDetail)">Eliminar</a>
                   </tr>
                 </td>
               </tbody>
