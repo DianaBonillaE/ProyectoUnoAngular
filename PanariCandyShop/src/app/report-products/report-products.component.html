@@ -1,3 +1,32 @@
-<p>
-  report-products works!
-</p>
+<div id="content">
+  <div class="panel panel-heading" align="center">
+    <h1>Reporte de productos más vendidos</h1>
+  </div>
+  <br>
+  <select class="form-control" name="month">
+    <option *ngFor="let category of getCategory()">{{category.productCategoryId}}</option>
+  </select>
+  <div class="container">
+      <div class="col-sm-8">
+          <br>        
+          <table class="table table-sm table-bordered table-striped" id="customers">
+              <thead>
+                  <tr>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Email</th>
+                      <th>Cantidad de compras</th>
+                    </tr>
+              </thead>
+              <tbody id="tablaClientes">
+                  <tr *ngFor="let item of generateReport()">
+                    <th>{{item.firstName}}</th>
+                    <th>{{item.lastName}}</th>
+                    <th>{{item.email}}</th>
+                    <th>{{item.quantity}}</th>
+                  </tr>
+                </tbody>
+          </table>
+      </div>
+  </div>
+</div>

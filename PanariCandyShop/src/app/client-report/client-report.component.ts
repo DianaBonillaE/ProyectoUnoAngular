@@ -13,18 +13,17 @@ export class ClientReportComponent implements OnInit {
   mount : number;
 
   constructor(private clientReportService: ClientReportService) {
-    this.clientReportService.seacrhClients(this.mount).subscribe(
-      (data : ClientReport[]) => {
-        this.reports = data;
-        }
-      );
+    
   }
 
   ngOnInit() {
   }
 
-  generateReport(): ClientReport[]{
-    return this.reports;
-  }
-
+  generateReport(){
+    this.clientReportService.seacrhClients(this.mount).subscribe(
+      (data : ClientReport[]) => {
+        this.reports = data;
+        }
+      );  
+    }
 }

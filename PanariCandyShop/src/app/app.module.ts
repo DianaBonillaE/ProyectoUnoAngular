@@ -22,6 +22,7 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register/register-service';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { ProductCategoryService } from './product-category/product-category-service'; 
+import { ReportProductsService } from './report-products/report-products-service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { ProductCategoryService } from './product-category/product-category-serv
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService,ProductService,InsertService, ClientReportService,RegisterService,ProductCategoryService],
+  providers: [LoginService,HomeService,FillCartService,ProductService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

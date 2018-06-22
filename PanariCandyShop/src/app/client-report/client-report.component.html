@@ -11,10 +11,12 @@
       'width': 170,
       'elementHandlers': specialElementHandlers
     });
-    doc.save('sample-file.pdf');
+    doc.save('Report.pdf');
   });
 
 </script>
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 
 <div id="content">
   <div class="panel panel-heading" align="center">
@@ -24,7 +26,7 @@
   <div class="container">
     <br>
     <div class="col-sm-4">
-      <h4 >Seleccione el mes para el cual quiere generar el reporte</h4>        
+      <h4>Seleccione el mes para el cual quiere generar el reporte</h4>
       <select class="form-control" name="month" [(ngModel)]="mount">
         <option value="1">Enero</option>
         <option value="2">Febrero</option>
@@ -66,9 +68,9 @@
         </table>
       </div>
     </div>
-  </div>  
+  </div>
 </div>
 <div class="col-sm-2" align="center">
-    <div id="editor"></div>
-    <button id="cmd" class="btn btn-danger">Generate PDF</button>
+  <div id="editor"></div>
+  <button id="cmd" class="btn btn-danger">Generate PDF</button>
 </div>
