@@ -7,8 +7,6 @@ export class Product{
     unitsOnStock: string;
     description: string;
     salesTax: string;
- productCategoryId: ProductCategory;
- onCart : string;
- clientID: string;
+ //productCategoryId: ProductCategory;
 
 }

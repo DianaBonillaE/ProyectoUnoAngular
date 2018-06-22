@@ -17,4 +17,14 @@ products: Product[] = new Array<Product>();
     });
   }
 
+  delete(productI){
+  
+    this.service.delete(productI).subscribe(
+      (data: Product[]) => {
+        this.products = data;
+      }
+    );
+
+}
+
 }

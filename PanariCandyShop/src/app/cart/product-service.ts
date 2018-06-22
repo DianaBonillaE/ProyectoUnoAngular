@@ -16,7 +16,11 @@ export class ProductService{
   private url = Environment.apiUrl + this.requestMapping;
 
   public getAll() {
-    return this.http.get(this.url);
+    return this.http.get(this.url +"onCart/");
+  }
+
+  public delete(productID){
+    return this.http.get(this.url +"delete/" +productID);
   }
  
 

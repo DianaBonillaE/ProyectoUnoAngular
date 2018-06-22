@@ -17,7 +17,7 @@ export class FillCartService{
 
   public getAll(){
     //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
-    return this.http.get(this.url );
+    return this.http.get(this.url);
   }
 
   public add(productID){

@@ -18,7 +18,7 @@
                   <tr>{{prod.description}}</tr>
                   <tr>{{prod.price}}</tr>
                   <tr>
-                    <a class="btn btn-danger" role="button" href="">Eliminar</a>
+                    <a class="btn btn-danger" role="button" (click)="delete(prod.productId)">Eliminar</a>
                   </tr>
                 </td>
               </tbody>
