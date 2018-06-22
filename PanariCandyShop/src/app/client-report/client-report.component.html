@@ -1,78 +1,74 @@
 <script>
-    $(document).ready(function(){
-      $("#buscarCliente").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#tablaClientes tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
+  var doc = new jsPDF();
+  var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+      return true;
+    }
+  };
+
+  $('#cmd').click(function () {
+    doc.fromHTML($('#content').html(), 15, 15, {
+      'width': 170,
+      'elementHandlers': specialElementHandlers
     });
-    </script>    
+    doc.save('sample-file.pdf');
+  });
 
-<div class="panel panel-heading" align="center">
-		<h1>Reporte mensual de compras por cliente</h1>
-	</div>
-	<div class="container">
-		<div class="row">
-        <br>
-        <br>
-        <div class="col-sm-4">
-          <select class="form-control" id="sel1" placeholder="Seleccione el mes a consultar">
-            <option value="1">Enero</option>
-            <option value="2">Febrero</option>
-            <option value="3">Marzo</option>
-            <option value="4">Abril</option>
-            <option value="5">Mayo</option>
-            <option value="6">Junio</option>
-            <option value="7">Julio</option>
-            <option value="8">Agosto</option>
-            <option value="9">Septiembre</option>
-            <option value="10">Octubre</option>
-            <option value="11">Noviembre</option>
-            <option value="12">Diciembre</option>
-          </select>
-        </div>
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <button type="button" class="btn btn-primary">PDF</button>
-            <button type="button" class="btn btn-success">Excel</button>
-        </div>
-      </div>
-      <br>
-      
-		<label>Buscar Cliente: </label><input id="buscarCliente" type="text" placeholder="Buscar Clientes"/>
+</script>
+
+<div id="content">
+  <div class="panel panel-heading" align="center">
+    <h1>Reporte mensual de compras por cliente</h1>
+  </div>
+  <br>
+  <div class="container">
     <br>
-    <div class= "table-responsive">
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th>Nombre</th>
-						<th>Apellido</th>
-						<th>Email</th>
-						<th>Cantidad de compras</th>
-					</tr>
-				</thead>
-				<tbody id="tablaClientes">
-					<tr *ngFor="let item of ">
+    <div class="col-sm-4">
+      <h4 >Seleccione el mes para el cual quiere generar el reporte</h4>        
+      <select class="form-control" name="month">
+        <option value="1">Enero</option>
+        <option value="2">Febrero</option>
+        <option value="3">Marzo</option>
+        <option value="4">Abril</option>
+        <option value="5">Mayo</option>
+        <option value="6">Junio</option>
+        <option value="7">Julio</option>
+        <option value="8">Agosto</option>
+        <option value="9">Septiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+    </div>
 
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
+  <div class="container">
+    <div class="col-sm-8">
+      <br>
+      <div class="table-responsive">
+        <table class="table table-sm table-bordered table-striped" id="customers">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Email</th>
+              <th>Cantidad de compras</th>
+            </tr>
+          </thead>
+          <tbody id="tablaClientes">
+            <tr *ngFor="let item of generateReport()">
+              <th>{{item.firstName}}</th>
+              <th>{{item.lastName}}</th>
+              <th>{{item.email}}</th>
+              <th>{{item.quantity}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="col-sm-2" align="center">
+    <div id="editor"></div>
+    <button id="cmd" class="btn btn-danger">Generate PDF</button>
+</div>

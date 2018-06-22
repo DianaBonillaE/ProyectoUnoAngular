@@ -10,12 +10,21 @@ import { ClientReportService } from './client-report-service';
 export class ClientReportComponent implements OnInit {
 
   private reports: ClientReport[] = new Array<ClientReport>();
+  mount : number;
 
   constructor(private clientReportService: ClientReportService) {
-    
-   }
+    this.clientReportService.seacrhClients(this.mount).subscribe(
+      (data : ClientReport[]) => {
+        this.reports = data;
+        }
+      );
+  }
 
   ngOnInit() {
+  }
+
+  generateReport(): ClientReport[]{
+    return this.reports;
   }
 
 }
