@@ -3,9 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>PanariCandyShop</title>
-  <base href="/">
-
-  
+  <base href="/cliente">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -36,8 +34,8 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/search-login">Ingresar</a></li>
-              <li><a href="/search-register">Registrate</a></li>
+              <li><a href="/search-register"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li>
+              <li><a href="/search-login"><span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a></li>
               <li><a href="/search-cart">Carrito</a></li>
             </ul>
           </div>
@@ -49,5 +47,6 @@
   <app-home></app-home>
   <app-fillCart></app-fillCart>
   <router-outlet></router-outlet>
+  
 </body>
 </html>
