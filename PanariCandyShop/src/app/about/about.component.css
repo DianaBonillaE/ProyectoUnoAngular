@@ -54,3 +54,6 @@ p {font-size: 16px;}
     background-color: #1abc9c;
     color: #ffffff;
 }
+.container-fluid.acercaDe{
+    width: 80%;
+}

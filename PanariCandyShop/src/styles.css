@@ -9,5 +9,5 @@
     letter-spacing: 5px;
 }
 .navbar-nav  li a:hover {
-    color: rgb(229, 226, 226) !important;
+    color: black(229, 226, 226) !important;
 }
