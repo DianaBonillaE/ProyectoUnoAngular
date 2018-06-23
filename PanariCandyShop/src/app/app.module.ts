@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { HomeService } from './home/home-service';
 import { FillCartService } from './cart/fill-cart-service';
 import { CartComponent } from './cart/cart.component';
-import { ProductService } from './cart/product-service';
 import { PrincipalComponent } from './principal/principal.component';
 import { ReportCustomersComponent } from './report-customers/report-customers.component';
 import { InsertProductComponent } from './insert-product/insert-product.component';
@@ -46,7 +45,7 @@ import { AboutComponent } from './about/about.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService,ProductService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService],
+  providers: [LoginService,HomeService,FillCartService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

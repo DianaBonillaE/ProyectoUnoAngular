@@ -27,9 +27,10 @@
 <br>
 <br>
 <div class="container">
-  <br>
   <div *ngFor="let order of orderDetails">
+      <br>
     <div class="panel panel-success class">
+      
       <div class="panel-heading">
 
       </div>
@@ -55,6 +56,7 @@
       </div>
     </div>
   </div>
+  <a type="button" class="btn btn-ttc" style="margin-left: 1000px; height: 40px; width: 70px; text-align: center;" (click)="pay(order)">Pagar</a>
 </div>
 <div class="container-fluid bg-2 text-center">
     <h3 class="margin">Panari's Candy Shop</h3>

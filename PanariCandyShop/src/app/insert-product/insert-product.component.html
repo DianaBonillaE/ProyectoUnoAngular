@@ -49,6 +49,42 @@
                         <div class="form-group" style="width: 75%; margin-left: 15%">
                             <input type="text" class="form-control" id="salesTax" placeholder="Impuesto de Ventas" required [(ngModel)]="product.salesTax">
                         </div>
+                        <div style="margin-left: 8%;">
+                                <form id="upload-file-form">
+                                    <input id="upload-file-input" type="file" name="uploadfile" accept="/image/*" class="btn btn-warning"/>
+                                    <br />
+                                    <span id="upload-file-message"></span>
+                                </form>
+                            
+                                <script>
+                                    $(document).ready(function() {
+                                        $("#upload-file-input").on("change", uploadFile);
+                                    });
+                            
+                                    function uploadFile() {
+                                        $.ajax({
+                                            url: "/uploadFile",
+                                            type: "POST",
+                                            data: new FormData($("#upload-file-form")[0]),
+                                            enctype: 'multipart/form-data',
+                                            processData: false,
+                                            contentType: false,
+                                            cache: false,
+                                            success: function () {
+                                                // Handle upload success
+                                                $("#upload-file-message").text("Imagen Seleccionada");
+                                                //location.reload(true);
+                                            },
+                                            error: function () {
+                                                // Handle upload error
+                                                $("#upload-file-message").text(
+                                                    "Error de carga del archivo");
+                                                //location.reload(true);
+                                            }
+                                        });
+                                    } // function uploadFile
+                                </script>
+                            </div>
                         <a type="submit" class="btn btn-ttc" (click)="insert()">Insertar Producto</a>
                     </div>
                 </div>

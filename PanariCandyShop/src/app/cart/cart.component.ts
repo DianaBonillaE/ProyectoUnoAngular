@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Router} from '@angular/router';
-import {ProductService} from '../cart/product-service';
 import {Product} from '../Models/product';
 import { OrderDetail } from '../Models/orderDetail';
+import { FillCartService } from './fill-cart-service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -10,10 +10,11 @@ import { OrderDetail } from '../Models/orderDetail';
 })
 export class CartComponent implements OnInit {
 orderDetails: OrderDetail[] = new Array<OrderDetail>();
-  constructor(private router:Router, private service: ProductService) { }
+confirm: string;
+  constructor(private router:Router, private service: FillCartService) { }
 
   ngOnInit() {
-    this.service.getAll().subscribe((data: OrderDetail[]) => {
+    this.service.getCart().subscribe((data: OrderDetail[]) => {
       this.orderDetails = data;
     });
   }
@@ -26,6 +27,14 @@ orderDetails: OrderDetail[] = new Array<OrderDetail>();
       }
     );
 
+}
+
+pay(order){
+  this.service.pay(order).subscribe(
+    (data: string)=>{
+      this.confirm = data;
+    }
+  )
 }
 
 }

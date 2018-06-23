@@ -18,11 +18,31 @@ export class FillCartService{
   public getAll(){
 
       return this.http.get(Environment.apiUrl + 'product/');
-   
   //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
   }
 
   public add(productID, units: string){
     return this.http.get(this.url + "addCart/" + productID + "/"+units);
   };
+
+  public getCart() {
+    var sesion = localStorage.getItem('sesion');
+    if(sesion==null || sesion==''){
+      return this.http.get(this.url+'onCart/'+'vacio');
+    }else{
+      return this.http.get(this.url +'onCart/'+sesion);
+    }
+  };
+  public delete(detailId){
+    var sesion = localStorage.getItem('sesion');
+    if(sesion==null || sesion==''){
+      return this.http.get(this.url+"delete/" +detailId +'/'+'vacio');
+    }else{
+      return this.http.get(this.url +"delete/" +detailId +'/'+sesion);
+    }
+  };
+
+  public pay(order){
+    return this.http.get(this.url+"pay/"+order);
+  }
 };

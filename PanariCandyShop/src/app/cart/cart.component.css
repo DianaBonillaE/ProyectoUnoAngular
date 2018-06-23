@@ -3,10 +3,11 @@
 .btn-ttc,
 .btn-ttc:hover,
 .btn-ttc:active {
-    background-color: #1abc9c !important;
+    background-color: #69abd1 !important;
     color: snow;
     margin-left: 40%;
 }
+
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
