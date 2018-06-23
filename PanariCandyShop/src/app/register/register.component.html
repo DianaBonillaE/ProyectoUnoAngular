@@ -1,60 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Register</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<style>
-    body {
-        background: url(http://mfs1.cdnsw.com/fs/Utilitaires/9dtsq-degrade_3.png);
-        background-size: 100%;
-    }
-
-    .btn-ttc,
-    .btn-ttc:hover,
-    .btn-ttc:active {
-        background-color: #1abc9c !important;
-        color: snow;
-        margin-left: 40%;
-    }
-</style>
-
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/search-home">Panari's Candy Shop</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/search-register">
-                            <span class="glyphicon glyphicon-user"></span>Registrarse</a>
-                    </li>
-                    <li>
-                        <a href="/search-login">
-                            <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
-                    </li>
-                    <li>
-                        <a href="/search-cart">Carrito</a>
-                    </li>
-                </ul>
-            </div>
+<script src="register.component.ts"></script>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/search-home" style="color: #fff !important">Panari's Candy Shop</a>
         </div>
-    </nav>
-    <br>
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 style="text-align: center">Registrate</h2>
-                    <h3>Datos personales:</h3>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/search-register" style="color: #fff !important">
+                        <span class="glyphicon glyphicon-user"></span>Registrate</a>
+                </li>
+                <li>
+                    <a href="/search-login" style="color: #fff !important">
+                        <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+                </li>
+                <li>
+                    <a href="/search-cart" style="color: #fff !important">Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="pricing" class="container-fluid">
+    <div class="row slideanim">
+        <div class="col-sm-4 col-xs-12"></div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default ">
+                <div class="panel-heading text-center">
+                    <h1>Registrate</h1>
+                </div>
+                <div class="panel-body">
+                    <p>Datos personales:</p>
                     <div class="form-group" style="width: 75%; margin-left: 15%">
                         <input type="email" class="form-control" id="email" placeholder="Email" required [(ngModel)]="user.email">
                     </div>
@@ -67,7 +49,7 @@
                     <div class="form-group" style="width: 75%; margin-left: 15%">
                         <input type="text" class="form-control" id="password" placeholder="Contraseña" required [(ngModel)]="user.password">
                     </div>
-                    <h3>Dirección:</h3>
+                    <p>Dirección:</p>
                     <div class="form-group" style="width: 75%; margin-left: 15%">
                         <input type="text" class="form-control" id="country" placeholder="País" required [(ngModel)]="user.country">
                     </div>
@@ -87,8 +69,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-4 col-xs-12"></div>
     </div>
-</body>
-
-</html>
+</div>
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">Panari's Candy Shop</h3>
+    <p class="footer">La mejor tienda de dulces al alcance de un click </p>
+</div>

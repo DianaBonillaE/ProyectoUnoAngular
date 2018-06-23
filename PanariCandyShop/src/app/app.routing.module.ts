@@ -11,6 +11,7 @@ import { ClientReportComponent } from './client-report/client-report.component';
 import { ReportProductsComponent } from './report-products/report-products.component';
 
 const routes: Routes = [
+    {path:'',redirectTo:'search-home',pathMatch:'full'},
     {path:'search-login',component: LoginComponent},
     {path:'search-register',component: RegisterComponent},
     {path:'search-home',component: HomeComponent},
