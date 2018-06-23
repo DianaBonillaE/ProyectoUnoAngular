@@ -23,6 +23,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
 import { ProductCategoryService } from './product-category/product-category-service'; 
 import { ReportProductsService } from './report-products/report-products-service';
 import { AboutComponent } from './about/about.component';
+import { HomeAdministratorComponent } from './home-administrator/home-administrator.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AboutComponent } from './about/about.component';
     RegisterComponent,
     ProductCategoryComponent,
     AboutComponent,
+    HomeAdministratorComponent
       ],
   imports: [
     BrowserModule,

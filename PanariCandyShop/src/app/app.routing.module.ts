@@ -1,3 +1,5 @@
+
+
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import { RegisterComponent } from './register/register.component';
@@ -10,6 +12,7 @@ import { InsertProductComponent } from './insert-product/insert-product.componen
 import { ClientReportComponent } from './client-report/client-report.component';
 import { ReportProductsComponent } from './report-products/report-products.component';
 import { AboutComponent }from './about/about.component';
+import { HomeAdministratorComponent } from './home-administrator/home-administrator.component';
 
 const routes: Routes = [
     {path:'',redirectTo:'search-home',pathMatch:'full'},
@@ -22,7 +25,8 @@ const routes: Routes = [
     {path: 'report-customers', component: ReportCustomersComponent},
     {path: 'insert-product', component: InsertProductComponent},
     {path: 'client-report', component: ClientReportComponent},
-    {path: 'products-report', component: ReportProductsComponent}
+    {path: 'products-report', component: ReportProductsComponent},
+    {path: 'home-admin', component: HomeAdministratorComponent}
    ];
 
 @NgModule({
