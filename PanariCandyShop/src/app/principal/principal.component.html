@@ -1,26 +1,31 @@
 <script src="principal.component.ts"></script>
-<nav class="navbar navbar-default">
-  <div class="container">
-      <div class="navbar-header">
-          <a class="navbar-brand" href="/search-home">Panari's Candy Shop</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-              <li>
-                  <a href="/search-register">
-                      <span class="glyphicon glyphicon-user"></span>Registrarse</a>
-              </li>
-              <li>
-                  <a href="/search-login">
-                      <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
-              </li>
-              <li>
-                  <a href="/search-cart">Carrito</a>
-              </li>
-          </ul>
-      </div>
-  </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/search-home" style="color: #fff !important">Panari's Candy Shop</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/search-register" style="color: #fff !important">
+                        <span class="glyphicon glyphicon-user"></span>Registrate</a>
+                </li>
+                <li>
+                    <a href="/search-login" style="color: #fff !important">
+                        <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+                </li>
+                <li>
+                    <a href="/search-cart" style="color: #fff !important">Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
     <br>
     <div *ngFor="let prod of products">
@@ -63,3 +68,7 @@
       </div>
     </div>
   </div>
+  <div class="container-fluid bg-2 text-center">
+        <h3 class="margin">Panari's Candy Shop</h3>
+        <p class="footer">La mejor tienda de dulces al alcance de un click </p>
+    </div>
