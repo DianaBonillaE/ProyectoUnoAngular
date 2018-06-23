@@ -9,11 +9,13 @@ import { ReportCustomersComponent} from './report-customers/report-customers.com
 import { InsertProductComponent } from './insert-product/insert-product.component';
 import { ClientReportComponent } from './client-report/client-report.component';
 import { ReportProductsComponent } from './report-products/report-products.component';
+import { AboutComponent }from './about/about.component';
 
 const routes: Routes = [
     {path:'',redirectTo:'search-home',pathMatch:'full'},
     {path:'search-login',component: LoginComponent},
     {path:'search-register',component: RegisterComponent},
+    {path:'about-us',component: AboutComponent},
     {path:'search-home',component: HomeComponent},
     {path: 'search-cart', component: CartComponent},
     {path: 'principal', component: PrincipalComponent},
