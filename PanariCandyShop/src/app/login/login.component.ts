@@ -23,25 +23,24 @@ export class LoginComponent implements OnInit {
   
   search(){
     this.service.search(this.login.email,this.login.password).subscribe(
-      (data: string) => {
+     
+    (data: string) => {
         this.role = data;
-       console.log(data+' hola')
-       localStorage.setItem('sesion',this.login.email);
-        if(data == 'Cliente'){
-          localStorage.setItem('role',data);
-          this.router.navigateByUrl('/search-home');
-        }
-        else{
-          this.router.navigateByUrl('/search-cart');
-        }
-      },
-      error =>{
-       // alert('Datos incorrectos');
-      }
-    );
-  }
-
-
+        console.log(JSON.stringify(data)+' hola')
+        localStorage.setItem('sesion',this.login.email);
+         if(data == 'Cliente'){
+           localStorage.setItem('role',data);
+           this.router.navigateByUrl('/search-home');
+         }
+         else{
+           this.router.navigateByUrl('/search-cart');
+         }
+       },
+       error =>{
+         alert('Datos incorrectos');
+       }
+      );
+    };
 }
 
 

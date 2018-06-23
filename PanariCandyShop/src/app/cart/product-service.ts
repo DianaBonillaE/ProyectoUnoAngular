@@ -18,7 +18,7 @@ export class ProductService{
   public getAll() {
     var sesion = localStorage.getItem('sesion');
     if(sesion==null || sesion==''){
-      return this.http.get(Environment.apiUrl +'cart/onCart/'+'null');
+      return this.http.get(Environment.apiUrl +'cart/onCart/'+'vacio');
     }else{
       return this.http.get(Environment.apiUrl +'cart/onCart/'+sesion);
     }

@@ -17,7 +17,7 @@ export class LoginService{
   
   public search(email: string, password: string){
     //return this.http.post(this.url, {params: {"publicador": paramPub, "libro":paramLib}});
-    return this.http.get(this.url  + email + '/' + password);
+    return this.http.get(this.url  + email + '/' + password, {responseType: 'text'});
   }
 
 };
