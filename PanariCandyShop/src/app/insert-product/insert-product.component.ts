@@ -13,27 +13,36 @@ import { Product } from '../Models/product';
 export class InsertProductComponent implements OnInit {
 
 categories: ProductCategory[] = new Array<ProductCategory>();
-
+selectedFiles: FileList;
+currentFileUpload: File;
 products: Product[] = new Array<Product>();
 product: Product = new Product();
+
   constructor(private router: Router, private service: InsertService) { }
 
   ngOnInit() {
     
-    //this.service.getAllCategories().subscribe(
-    //  (data: ProductCategory[] ) => {
-   //     this.categories = data;
-   //   }
-   // ); 
+  this.service.getCategories().subscribe(
+     (data: ProductCategory[] ) => {
+        this.categories = data;
+      }
+    ); 
 
   }
-  insert(){
-    this.service.insert(this.product).subscribe(
-      (data: Product[] ) => {
-        this.products = data;
-      }
-    );
-  }
+
+
+  createProduct(): void {
+
+    this.currentFileUpload = this.selectedFiles.item(0);
+    this.service.createProduct(this.product, this.currentFileUpload)
+    .subscribe(data => {
+      console.log(this.product.productCategory.productCategoryId);
+    });
+    }
+    //FILE IS SELECTED
+    selectFile(event) {
+    this.selectedFiles = event.target.files;
+    }
 
 
 }

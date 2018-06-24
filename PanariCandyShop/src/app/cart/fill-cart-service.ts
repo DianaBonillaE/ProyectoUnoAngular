@@ -42,7 +42,8 @@ export class FillCartService{
     }
   };
 
-  public pay(order){
-    return this.http.get(this.url+"pay/"+order);
+  public pay(){
+    var order = JSON.parse(localStorage.getItem('carrito'));
+    return this.http.post(this.url+"pay",order);
   }
 };

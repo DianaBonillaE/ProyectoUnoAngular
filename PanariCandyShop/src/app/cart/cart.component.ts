@@ -16,6 +16,8 @@ confirm: string;
   ngOnInit() {
     this.service.getCart().subscribe((data: OrderDetail[]) => {
       this.orderDetails = data;
+      localStorage.setItem('carrito',JSON.stringify(data));
+      
     });
   }
 
@@ -29,10 +31,11 @@ confirm: string;
 
 }
 
-pay(order){
-  this.service.pay(order).subscribe(
+pay(){
+  this.service.pay().subscribe(
     (data: string)=>{
       this.confirm = data;
+      alert(this.confirm);
     }
   )
 }
