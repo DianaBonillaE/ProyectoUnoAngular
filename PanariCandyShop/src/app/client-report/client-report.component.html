@@ -20,7 +20,7 @@
             <label>Fecha de finalización de la busqueda:</label>
             <input class="form-control" placeholder="YYYY-MM-DD" required [(ngModel)]="endDate">
             <br>
-            <button class="btn btn-ttc" align="left">Buscar</button>
+            <button class="btn btn-ttc" (click)="getReportsByParameters()">Buscar</button>
           </div>
           <br>
           <table>
@@ -30,11 +30,11 @@
                 <th>Correo</th>
                 <th>Compras realizadas</th>
               </tr>
-              <tr>
-                <td>Diana</td>
-                <td>Bonilla</td>
-                <td>dianapamela3197@gmail.com</td>
-                <td>1</td>
+              <tr *ngFor="let report of getAllReports()">
+                <td>{{report.firstName}}</td>
+                <td>{{report.lastName}}</td>
+                <td>{{report.email}}</td>
+                <td>{{report.quantity}}</td>
               </tr>
             </table>
         </div>

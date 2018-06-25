@@ -1,32 +1,47 @@
-<div id="content">
-  <div class="panel panel-heading" align="center">
-    <h1>Reporte de productos más vendidos</h1>
+<script src="report-products.component.ts"></script>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container" >
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home-admin" style="color: #fff !important">Panari's Candy Shop</a>
+    </div>
   </div>
-  <br>
-  <select class="form-control" name="month">
-    <option *ngFor="let category of getCategory()">{{category.productCategoryId}}</option>
-  </select>
-  <div class="container">
-      <div class="col-sm-8">
-          <br>        
-          <table class="table table-sm table-bordered table-striped" id="customers">
-              <thead>
-                  <tr>
-                      <th>Nombre</th>
-                      <th>Apellido</th>
-                      <th>Email</th>
-                      <th>Cantidad de compras</th>
-                    </tr>
-              </thead>
-              <tbody id="tablaClientes">
-                  <tr *ngFor="let item of generateReport()">
-                    <th>{{item.firstName}}</th>
-                    <th>{{item.lastName}}</th>
-                    <th>{{item.email}}</th>
-                    <th>{{item.quantity}}</th>
-                  </tr>
-                </tbody>
-          </table>
+</nav>
+<div id="pricing" class="container-fluid paneles" align="center">
+    <div class="row slideanim">
+      <div class="col-xs-10">
+        <div class="panel panel-default text-center">
+          <div class="panel-heading">
+            <h1>Listado de los 2 productos más vendidos en el último mes en cada categoría existente</h1>
+          </div>
+          <div class="panel-body">
+            <div class="form-group col-xs-4">
+              <label>Selecione la categoria a consultar:</label>
+              <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+            </div>
+            <br>
+            <table>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Correo</th>
+                  <th>Compras realizadas</th>
+                </tr>
+                <tr>
+                  <td>das</td>
+                  <td>aa</td>
+                  <td>s</td>
+                  <td>1</td>
+                </tr>
+              </table>
+          </div>
+          <br>
+          <div class="panel-footer">
+              <button class="btn btn-ttc">Generar PDF</button>
+          </div>
+        </div>  
       </div>
+    </div>
   </div>
-</div>
