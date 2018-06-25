@@ -4,6 +4,7 @@ export class User{
     lastName:String;
     password:String;
     userRoleId:string;
+    nameRole:string
     country:string;
     province:string;
     canton:string;

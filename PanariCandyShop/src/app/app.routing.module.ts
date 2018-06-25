@@ -13,6 +13,9 @@ import { ClientReportComponent } from './client-report/client-report.component';
 import { ReportProductsComponent } from './report-products/report-products.component';
 import { AboutComponent }from './about/about.component';
 import { HomeAdministratorComponent } from './home-administrator/home-administrator.component';
+import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
+import { HomeEmployeeComponent } from './home-employee/home-employee.component';
+import { ProductCategoryComponent } from './product-category/product-category.component'
 
 const routes: Routes = [
     {path:'',redirectTo:'search-home',pathMatch:'full'},
@@ -26,7 +29,10 @@ const routes: Routes = [
     {path: 'insert-product', component: InsertProductComponent},
     {path: 'client-report', component: ClientReportComponent},
     {path: 'products-report', component: ReportProductsComponent},
-    {path: 'home-admin', component: HomeAdministratorComponent}
+    {path: 'home-admin', component: HomeAdministratorComponent},
+    {path: 'register-employee', component: RegisterEmployeeComponent},
+    {path: 'home-employee', component: HomeEmployeeComponent},
+    {path: 'product-category', component: ProductCategoryComponent},
    ];
 
 @NgModule({
