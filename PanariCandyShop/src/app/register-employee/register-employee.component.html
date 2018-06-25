@@ -1,18 +1,19 @@
-<script src="register.component.ts"></script>
+
+<script src="register-employee.component.ts"></script>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/search-home" style="color: #fff !important">Panari's Candy Shop</a>
+            <a class="navbar-brand" href="/home-admin" style="color: #fff !important">Panari's Candy Shop</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/search-register" style="color: #fff !important">
-                        <span class="glyphicon glyphicon-user"></span>Registrate</a>
+                    <a href="/register-employee" style="color: #fff !important">
+                      <span class="glyphicon glyphicon-user"></span>Registrar un usuario</a>
                 </li>
                 <li>
                     <a href="/search-login" style="color: #fff !important">
-                        <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+                        <span class="glyphicon glyphicon-log-in"></span>Cerrar Sesión</a>
                 </li>
             </ul>
         </div>
@@ -62,7 +63,11 @@
                     <div class="form-group" style="width: 75%; margin-left: 15%">
                         <input type="text" class="form-control" id="postalCode" placeholder="Codigo postal" required [(ngModel)]="user.postalCode">
                     </div>
-                    <a href="/search-login" type="submit" class="btn btn-ttc" (click)="insert()">Registrarse</a>
+                    <p>Puesto laboral:</p>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="userRoleId" class="form-control" id="nameRole" placeholder="Puesto" required [(ngModel)]="user.nameRole">
+                    </div>
+                    <a href="/search-login" type="submit" class="btn btn-ttc" (click)="insert()">Registrar</a>
                 </div>
             </div>
         </div>

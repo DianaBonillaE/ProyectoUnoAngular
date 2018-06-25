@@ -16,9 +16,9 @@ export class RegisterService{
 
   private url = Environment.apiUrl + this.requestMapping;
 
-  public insertUser (email:string,firstName:String,lastName:String,password:String,userRoleId:string,country:string, province:string,canton:string,district:string, postalCode:string){
+  public insertUser (email:string,firstName:String,lastName:String,password:String,userRoleId:string,nameRole:string,country:string, province:string,canton:string,district:string, postalCode:string){
     
-    return this.http.get(this.url+'/register'+'/'+email+'/'+firstName+'/'+lastName+'/'+password+'/'+1+'/'+country+'/'+province+'/'+canton+'/'+district+'/'+postalCode);
+    return this.http.get(this.url+'/'+email+'/'+firstName+'/'+lastName+'/'+password+'/'+1+'/'+'Cliente'+'/'+country+'/'+province+'/'+canton+'/'+district+'/'+postalCode);
   }
 
 }

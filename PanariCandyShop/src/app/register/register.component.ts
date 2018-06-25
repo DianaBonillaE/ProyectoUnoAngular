@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   insert(){
     this.service.insertUser(this.user.email,this.user.firstName, this.user.lastName,this.user.password,
-      this.user.userRoleId, this.user.country,this.user.province,this.user.canton,this.user.district,this.user.postalCode).subscribe(
+      this.user.userRoleId,this.user.nameRole, this.user.country,this.user.province,this.user.canton,this.user.district,this.user.postalCode).subscribe(
       (data:User) =>{
         this.user = data;
       }
