@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Environment} from '../app.environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders,HttpRequest } from '@angular/common/http';
 import { Product } from '../Models/product';
 
 @Injectable()
@@ -21,8 +21,26 @@ export class InsertService {
  //   return this.http.get(this.url+'/');
  // };
 
-  public insert(product: Product ){
-    return this.http.post(this.url, product);
-  
-  };
+  public createProduct(product: Product, file: File) {
+    let formdata: FormData = new FormData();
+    
+    //ATTACH THE FILE AND THE PROGRAM TO SEND IT TO THE API
+    formdata.append("image", file);
+    //DOCUMENT DATA
+    formdata.append("productName", product.productName);
+    formdata.append("price", product.price);
+    formdata.append("description", product.description);
+    formdata.append("salesTax", product.salesTax);
+    formdata.append("productCategory",product.productCategory.productCategoryId);
+    
+    //CREATE THE REQUEST OBJECT WITH THE PARAMETERS (TYPE, URL, DATA, RESPONSE DATA)
+    const req = new HttpRequest("POST", this.url + "save", formdata, {
+    responseType: "json"
+    });
+    return this.http.request(req);
+    }
+
+    public getCategories(){
+      return this.http.get(Environment.apiUrl+'category/');
+    }
 }

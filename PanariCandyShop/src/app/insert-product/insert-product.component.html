@@ -1,98 +1,83 @@
 <script src="insert-product.component.ts"></script>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/search-home" style="color: #fff !important">Panari's Candy Shop</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/search-register" style="color: #fff !important">
-                            <span class="glyphicon glyphicon-user"></span>Registrate</a>
-                    </li>
-                    <li>
-                        <a href="/search-login" style="color: #fff !important">
-                            <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
-                    </li>
-                    <li>
-                        <a href="/search-cart" style="color: #fff !important">Carrito</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/search-home" style="color: #fff !important">Panari's Candy Shop</a>
         </div>
-    </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    <div id="pricing" class="container-fluid">
-        <div class="row slideanim">
-            <div class="col-sm-4 col-xs-12"></div>
-            <div class="col-sm-4 col-xs-12">
-                <div class="panel panel-default ">
-                    <div class="panel-heading text-center">
-                        <h1>Insertar Producto</h1>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/search-register" style="color: #fff !important">
+                        <span class="glyphicon glyphicon-user"></span>Registrate</a>
+                </li>
+                <li>
+                    <a href="/search-login" style="color: #fff !important">
+                        <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+                </li>
+                <li>
+                    <a href="/search-cart" style="color: #fff !important">Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="pricing" class="container-fluid">
+    <div class="row slideanim">
+        <div class="col-sm-4 col-xs-12"></div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default ">
+                <div class="panel-heading text-center">
+                    <h1>Insertar Producto</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="productName" placeholder="Nombre" required [(ngModel)]="product.productName">
                     </div>
-                    <div class="panel-body">
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                                <input type="text" class="form-control" id="productName" placeholder="Nombre" required [(ngModel)]="product.productName">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="price" placeholder="Precio" required [(ngModel)]="product.price">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="description" placeholder="Descripcion" required [(ngModel)]="product.description">
-                        </div>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <input type="text" class="form-control" id="salesTax" placeholder="Impuesto de Ventas" required [(ngModel)]="product.salesTax">
-                        </div>
-                        <div style="margin-left: 8%;">
-                                <form id="upload-file-form">
-                                    <input id="upload-file-input" type="file" name="uploadfile" accept="/image/*" class="btn btn-warning"/>
-                                    <br />
-                                    <span id="upload-file-message"></span>
-                                </form>
-                            
-                                <script>
-                                    $(document).ready(function() {
-                                        $("#upload-file-input").on("change", uploadFile);
-                                    });
-                            
-                                    function uploadFile() {
-                                        $.ajax({
-                                            url: "/uploadFile",
-                                            type: "POST",
-                                            data: new FormData($("#upload-file-form")[0]),
-                                            enctype: 'multipart/form-data',
-                                            processData: false,
-                                            contentType: false,
-                                            cache: false,
-                                            success: function () {
-                                                // Handle upload success
-                                                $("#upload-file-message").text("Imagen Seleccionada");
-                                                //location.reload(true);
-                                            },
-                                            error: function () {
-                                                // Handle upload error
-                                                $("#upload-file-message").text(
-                                                    "Error de carga del archivo");
-                                                //location.reload(true);
-                                            }
-                                        });
-                                    } // function uploadFile
-                                </script>
-                            </div>
-                        <a type="submit" class="btn btn-ttc" (click)="insert()">Insertar Producto</a>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="price" placeholder="Precio" required [(ngModel)]="product.price">
                     </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="description" placeholder="Descripcion" required [(ngModel)]="product.description">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <input type="text" class="form-control" id="salesTax" placeholder="Impuesto de Ventas" required [(ngModel)]="product.salesTax">
+                    </div>
+                    <div class="form-group" style="width: 75%; margin-left: 15%">
+                            <select   [(ngModel)]="product.productCategory.productCategoryId" id="productCategoryId">
+                    <option *ngFor="let cat of categories" [(ngValue)]="cat.productCategoryId">{{cat.productCategoryName}}</option>
+                            </select>
+                        </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Imagen:</label>
+                        <div class="panel panel-default document-panel">
+                        <div class="panel-heading clearfix">
+                        <h3 class="panel-title pull-left">Seleccione una imagen</h3>
+                        </div>
+                        <div class="file-tab panel-body">
+                        <label class="btn btn-default">
+                        <!-- The file is stored here. -->
+                        <input type="file" name="file" id="file" (change)="selectFile($event)" accept="image/*">
+                        </label>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                    <a type="submit" class="btn btn-ttc" (click)="createProduct()">Insertar Producto</a>
                 </div>
             </div>
-            <div class="col-sm-4 col-xs-12"></div>
         </div>
+        <div class="col-sm-4 col-xs-12"></div>
     </div>
-    <div class="container-fluid bg-2 text-center">
-        <h3 class="margin">Panari's Candy Shop</h3>
-        <p class="footer">La mejor tienda de dulces al alcance de un click </p>
-    </div>
+</div>
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">Panari's Candy Shop</h3>
+    <p class="footer">La mejor tienda de dulces al alcance de un click </p>
+</div>
