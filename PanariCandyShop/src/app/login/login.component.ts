@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   
   search(){
     this.service.search(this.login.email,this.login.password).subscribe(
-     
     (data: string) => {
         this.role = data;
         console.log(JSON.stringify(data)+' hola')
