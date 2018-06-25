@@ -24,6 +24,9 @@ import { ProductCategoryService } from './product-category/product-category-serv
 import { ReportProductsService } from './report-products/report-products-service';
 import { AboutComponent } from './about/about.component';
 import { HomeAdministratorComponent } from './home-administrator/home-administrator.component';
+import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
+import { RegisterEmployeeService } from './register-employee/register-employee.service';
+import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { HomeAdministratorComponent } from './home-administrator/home-administra
     RegisterComponent,
     ProductCategoryComponent,
     AboutComponent,
-    HomeAdministratorComponent
+    HomeAdministratorComponent,
+    RegisterEmployeeComponent,
+    HomeEmployeeComponent
       ],
   imports: [
     BrowserModule,
@@ -47,7 +52,7 @@ import { HomeAdministratorComponent } from './home-administrator/home-administra
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService],
+  providers: [LoginService,HomeService,FillCartService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService,RegisterEmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
