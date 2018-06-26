@@ -32,6 +32,11 @@ import { ProductComponent } from './product/product.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { InvoiceService } from './invoice/invoice.service';
 import { InventoryService } from './inventory/inventory-service';
+import { DeleteProductsComponent } from './delete-products/delete-products.component';
+import { UpdateProductsComponent } from './update-products/update-products.component';
+import { DeleteProductsService } from './delete-products/delete-products.service';
+import { UpdateProductsService } from './update-products/update-products.service';
+import { ProductService } from './product/product.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +57,9 @@ import { InventoryService } from './inventory/inventory-service';
     HomeEmployeeComponent,
     InventoryComponent,
     ProductComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    UpdateProductsComponent,
+    DeleteProductsComponent,
       ],
   imports: [
     BrowserModule,
@@ -60,7 +67,7 @@ import { InventoryService } from './inventory/inventory-service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService,RegisterEmployeeService,InvoiceService,InventoryService],
+  providers: [LoginService,HomeService,FillCartService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService,RegisterEmployeeService,InvoiceService,InventoryService,UpdateProductsService,DeleteProductsService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

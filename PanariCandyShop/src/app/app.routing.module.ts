@@ -18,6 +18,9 @@ import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 import { ProductCategoryComponent } from './product-category/product-category.component'
 import { InventoryComponent } from './inventory/inventory.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { DeleteProductsComponent } from './delete-products/delete-products.component';
+import { UpdateProductsComponent } from './update-products/update-products.component';
+import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [
@@ -36,8 +39,11 @@ const routes: Routes = [
     {path: 'register-employee', component: RegisterEmployeeComponent},
     {path: 'home-employee', component: HomeEmployeeComponent},
     {path: 'product-category', component: ProductCategoryComponent},
+    {path: 'product', component: ProductComponent},
     {path: 'inventory', component: InventoryComponent},
-    {path: 'invoice',component:InvoiceComponent}
+    {path: 'invoice',component:InvoiceComponent},
+    {path: 'delete-product', component: DeleteProductsComponent},
+    {path: 'update-product', component: UpdateProductsComponent},
     
    ];
 
