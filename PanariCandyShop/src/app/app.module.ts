@@ -27,6 +27,8 @@ import { HomeAdministratorComponent } from './home-administrator/home-administra
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { RegisterEmployeeService } from './register-employee/register-employee.service';
 import { HomeEmployeeComponent } from './home-employee/home-employee.component';
+import { InventoryComponent } from './inventory/inventory.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { HomeEmployeeComponent } from './home-employee/home-employee.component';
     AboutComponent,
     HomeAdministratorComponent,
     RegisterEmployeeComponent,
-    HomeEmployeeComponent
+    HomeEmployeeComponent,
+    InventoryComponent
+    
       ],
   imports: [
     BrowserModule,
