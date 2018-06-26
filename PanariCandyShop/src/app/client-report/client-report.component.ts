@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientReport } from '../Models/client-report';
 import { ClientReportService } from './client-report-service';
+declare var jquery:any;
+declare var $ :any;
+declare var jsPDF: any;
+
 
 @Component({
   selector: 'app-client-report',
@@ -9,7 +13,7 @@ import { ClientReportService } from './client-report-service';
 })
 export class ClientReportComponent implements OnInit {
 
-  private reports: ClientReport[] = new Array<ClientReport>();
+  public reports: ClientReport[] = new Array<ClientReport>();
   startDate: string;
   endDate:string;
   
@@ -18,9 +22,7 @@ export class ClientReportComponent implements OnInit {
   constructor(private clientReportService: ClientReportService) {
     
   }
-  getReports(){
-    return this.reports;
-  }
+  
 
   getReportsByParameters(): void{
     this.clientReportService.seacrhClients(this.startDate,this.endDate).subscribe(
@@ -30,16 +32,23 @@ export class ClientReportComponent implements OnInit {
     );
   }
 
-/*(data: OrderDetail[]) => {
-        this.orderDetails = data;
-      } */
+  /* Jquery*/
 
-  /*generateReport(){
-    this.clientReportService.seacrhClients(this.mount).subscribe(
-      (data : ClientReport[]) => {
-        this.reports = data;
+  generatePDF(){
+    var doc = new jsPDF();
+    var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+            return true;
         }
-      );  
-    }
-  */
+    };
+    
+    $('#cmd').click(function () {   
+        doc.fromHTML($('#content').html(), 15, 15, {
+            'width': 200,
+                'elementHandlers': specialElementHandlers
+        });
+        doc.save('report.pdf');
+    });
+    
+  }
 }

@@ -9,16 +9,16 @@
 <div id="pricing" class="container-fluid paneles" align="center">
   <div class="row slideanim">
     <div class="col-xs-10">
-      <div class="panel panel-default text-center">
+      <div class="panel panel-default text-center" id="content">
         <div class="panel-heading">
           <h1>Listado del total de ventas de clientes que compraron en el último mes.</h1>
         </div>
         <div class="panel-body">
           <div class="form-group col-xs-4">
             <label>Fecha de inicio de la busqueda:</label>
-            <input class="form-control" placeholder="YYYY-MM-DD" required [(ngModel)]="startDate">
+            <input type="date" class="form-control" placeholder="YYYY-MM-DD" required [(ngModel)]="startDate">
             <label>Fecha de finalización de la busqueda:</label>
-            <input class="form-control" placeholder="YYYY-MM-DD" required [(ngModel)]="endDate">
+            <input type="date" class="form-control" placeholder="YYYY-MM-DD" required [(ngModel)]="endDate">
             <br>
             <button class="btn btn-ttc" (click)="getReportsByParameters()">Buscar</button>
           </div>
@@ -30,17 +30,17 @@
                 <th>Correo</th>
                 <th>Compras realizadas</th>
               </tr>
-              <tr *ngFor="let report of getAllReports()">
+              <tr *ngFor="let report of reports">
                 <td>{{report.firstName}}</td>
                 <td>{{report.lastName}}</td>
                 <td>{{report.email}}</td>
-                <td>{{report.quantity}}</td>
+                <td>{{report.buys}}</td>
               </tr>
             </table>
         </div>
         <br>
-        <div class="panel-footer">
-            <button class="btn btn-ttc">Generar PDF</button>
+        <div class="panel-footer" id="editor">
+            <button class="btn btn-ttc" id="cmd" (click)="generatePDF()">Generar PDF</button>
         </div>
       </div>  
     </div>

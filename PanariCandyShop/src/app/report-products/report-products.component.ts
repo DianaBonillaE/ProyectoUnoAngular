@@ -3,6 +3,11 @@ import { ProductCategoryService } from '../product-category/product-category.ser
 import { ReportProductsService } from './report-products-service';
 import { ReportProducts } from '../Models/report-products';
 import { ProductCategory } from '../Models/product-category';
+declare var jquery:any;
+declare var $ :any;
+declare var jsPDF: any;
+
+
 
 @Component({
   selector: 'app-report-products',
@@ -11,12 +16,14 @@ import { ProductCategory } from '../Models/product-category';
 })
 export class ReportProductsComponent implements OnInit {
 
-  private reports: ReportProducts[] = new Array<ReportProducts>();
-  private categories: ProductCategory[] = new Array<ProductCategory>();
-   
+  public reports: ReportProducts[] = new Array<ReportProducts>();
+  public categories: ProductCategory[] = new Array<ProductCategory>();
+  categoryId: number;
+  
   constructor(private reportProductsService: ReportProductsService) { }
 
   ngOnInit() {
+  this.getCategories();
   }
 
   getCategories(){
@@ -25,5 +32,32 @@ export class ReportProductsComponent implements OnInit {
     );
   }
 
+
+  getProductsReport(){
+    //alert("hola" + this.categoryId);
+    this.reportProductsService.filterProductByCategory(this.categoryId).subscribe(
+      (data: ReportProducts[]) => { this.reports = data}
+    );  
+  }
+
+/* Jquery*/
+
+generatePDF(){
+  var doc = new jsPDF();
+  var specialElementHandlers = {
+      '#editor': function (element, renderer) {
+          return true;
+      }
+  };
   
+  $('#cmd').click(function () {   
+      doc.fromHTML($('#content').html(), 15, 15, {
+          'width': 170,
+              'elementHandlers': specialElementHandlers
+      });
+      doc.save('report.pdf');
+  });
+  
+}
+
 }

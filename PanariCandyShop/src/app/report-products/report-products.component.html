@@ -9,16 +9,16 @@
 <div id="pricing" class="container-fluid paneles" align="center">
     <div class="row slideanim">
       <div class="col-xs-10">
-        <div class="panel panel-default text-center">
+        <div class="panel panel-default text-center" id="content">
           <div class="panel-heading">
             <h1>Listado de los 2 productos más vendidos en el último mes en cada categoría existente</h1>
           </div>
           <div class="panel-body">
             <div class="form-group col-xs-4">
-              <label>Selecione la categoria a consultar:</label>
-              <select class="form-control">
-                  <option *ngFor="let category of getCategories()" [value]="category.productCategoryId" [(ngModel)]="categoryId">{{category.productCategoryName}}</option>
-                </select>
+                <label>Selecione la categoria a consultar:</label>
+                  <select [(ngModel)]="categoryId" (change)="getProductsReport()" >
+                    <option *ngFor="let category of categories" [ngValue]="category.productCategoryId">{{category.productCategoryName}}</option>
+                  </select> 
             </div>
             <br>
             <table>
@@ -28,17 +28,17 @@
                   <th>Precio</th>
                   <th>Descripción</th>
                 </tr>
-                <tr>
-                  <td>das</td>
-                  <td>aa</td>
-                  <td>s</td>
-                  <td>1</td>
+                <tr *ngFor="let report of reports">
+                  <td>{{report.productId}}</td>
+                  <td>{{report.productName}}</td>
+                  <td>{{report.price}}</td>
+                  <td>{{report.description}}</td>
                 </tr>
               </table>
           </div>
           <br>
-          <div class="panel-footer">
-              <button class="btn btn-ttc">Generar PDF</button>
+          <div class="panel-footer" id="editor">
+              <button class="btn btn-ttc" id="cmd" (click)="generatePDF()">Generar PDF</button>
           </div>
         </div>  
       </div>
