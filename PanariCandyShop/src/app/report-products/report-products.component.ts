@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductCategoryService } from '../product-category/product-category-service';
 import { ReportProductsService } from './report-products-service';
 import { ReportProducts } from '../Models/report-products';
+import { ProductCategory } from '../Models/product-category';
 
 @Component({
   selector: 'app-report-products',
@@ -11,16 +12,18 @@ import { ReportProducts } from '../Models/report-products';
 export class ReportProductsComponent implements OnInit {
 
   private reports: ReportProducts[] = new Array<ReportProducts>();
-  
+  private categories: ProductCategory[] = new Array<ProductCategory>();
    
-  constructor() { }
+  constructor(private reportProductsService: ReportProductsService) { }
 
   ngOnInit() {
   }
 
-  
-  /*falta un metodo en el ProductCAtegoryService para poder traer todas las categorias
-  * getCategory()
-  */
+  getCategories(){
+    this.reportProductsService.findCategories().subscribe(
+      (data: ProductCategory[]) => { this.categories = data}
+    );
+  }
 
+  
 }

@@ -33,7 +33,7 @@
            
       <div class="panel panel-success class">
         <div class="panel-heading">
-  
+            <h4>Nombre del producto: {{prod.productName}}</h4>
         </div>
         <div class="panel-body">
           <div class="row">
@@ -44,7 +44,6 @@
                  <div class="row">
                    
                     <td>
-                    <tr>Nombre del producto: {{prod.productName}}</tr>
                     <tr>description: {{prod.description}}</tr>
                     <tr>Precio: {{prod.price}}</tr>
                     <tr>Unidades en stock: {{prod.unitsOnStock}}</tr>
@@ -53,10 +52,10 @@
                         <div class="col-sm-8"></div>
                         <div class="col-sm-4" style="border-color: #0E8E99;">
                     <tr>
-                    <input type="number" min="0" max="{{prod.unitsOnStock}}" name="units" id="units" [(ngModel)]="units">
+                    <input type="number" min="0" max="2000" [(ngModel)]="units">
                     <BR>
                         <BR>
-                      <a class="btn btn-info" role="button" (click)="add(prod.productId,units)" >Añadir</a>
+                      <a class="btn btn-info" role="button" (click)="add(prod,units)" >Añadir</a>
                     </tr>
                     </div>
                     </div>

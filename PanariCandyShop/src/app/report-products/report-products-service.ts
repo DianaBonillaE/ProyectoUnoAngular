@@ -17,4 +17,12 @@ export class ReportProductsService{
     public filterProductByCategory(categoryId: number){
         return this.http.get(this.url + categoryId);
     }
+
+    public findCategories(){
+        return this.http.get(Environment.apiUrl+"category/");
+    }
+
+    public getAllProducts(){
+        return this.http.get(Environment.apiUrl+"product/");
+    }
 }
