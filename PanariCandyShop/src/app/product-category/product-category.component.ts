@@ -13,6 +13,7 @@ export class ProductCategoryComponent implements OnInit {
 
   productCategory: ProductCategory= new ProductCategory();
   productCategories: ProductCategory[]= new Array<ProductCategory>();
+  productCategoriesNotProduct: ProductCategory[]= new Array<ProductCategory>();
 
   constructor(private router: Router, private service: ProductCategoryService) { }
 
@@ -20,6 +21,12 @@ export class ProductCategoryComponent implements OnInit {
     this.service.getAllCategories().subscribe(
       (data: ProductCategory[])=>{
         this.productCategories = data;
+      }
+    )
+
+    this.service.getAllCategoriesNotProduct().subscribe(
+      (data: ProductCategory[])=>{
+        this.productCategoriesNotProduct = data;
       }
     )
   }

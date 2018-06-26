@@ -72,7 +72,7 @@
           <br>
             <div class="form-group" style="width: 75%; margin-left: 15%">
                 <select [(ngModel)]="productCategory.productCategoryId" id="productCategoryIdEliminar">
-                  <option *ngFor="let productCategory of productCategories" [(ngValue)]="productCategory.productCategoryId">{{productCategory.productCategoryName}}</option>
+                  <option *ngFor="let productCategory of productCategoriesNotProduct" [(ngValue)]="productCategory.productCategoryId">{{productCategory.productCategoryName}}</option>
                 </select>
             </div>
           <br>

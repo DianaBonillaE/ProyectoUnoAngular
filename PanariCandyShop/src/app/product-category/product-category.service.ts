@@ -21,6 +21,10 @@ export class ProductCategoryService {
     return this.http.get(Environment.apiUrl+'category/');
   }
 
+  public getAllCategoriesNotProduct(){
+    return this.http.get(Environment.apiUrl+'category/lista');
+  }
+
   public updateCategory(productCategoryId:string,productCategory:ProductCategory){
     return this.http.put(this.url+'/'+productCategoryId,productCategory);
   }
