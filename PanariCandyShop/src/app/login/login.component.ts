@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit {
 
   
   search(){
+    if(localStorage.getItem('sesion')!=null){
+      localStorage.removeItem('sesion');
+    }
     this.service.search(this.login.email,this.login.password).subscribe(
     (data: string) => {
         this.role = data;

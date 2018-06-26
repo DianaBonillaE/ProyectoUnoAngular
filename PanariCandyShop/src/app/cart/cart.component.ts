@@ -12,11 +12,11 @@ import { Invoice } from '../Models/invoice';
 export class CartComponent implements OnInit {
   orderDetails: OrderDetail[] = new Array<OrderDetail>();
   confirm: string;
-  invoices: Invoice[] = new Array<Invoice>();
+  //invoices: Invoice[] = new Array<Invoice>();
   constructor(private router: Router, private service: FillCartService) { }
 
   ngOnInit() {
-    
+  // localStorage.clear();
     if(localStorage.getItem('pay')==='true'){
       localStorage.removeItem('pay');
     }
@@ -70,8 +70,8 @@ export class CartComponent implements OnInit {
   pay() {
     if(localStorage.getItem('sesion')!=null){
     this.service.pay().subscribe(
-      (data: Invoice[]) => {
-        this.invoices = data;
+      (data: OrderDetail[]) => {
+        this.orderDetails = data;
         localStorage.removeItem('invoice');
         localStorage.setItem('invoice',JSON.stringify(data));
         location.href ='http://localhost:4200/invoice';

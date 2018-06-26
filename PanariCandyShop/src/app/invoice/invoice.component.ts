@@ -11,13 +11,14 @@ import { Invoice } from '../Models/invoice';
   styleUrls: ['./invoice.component.css']
 })
 export class InvoiceComponent implements OnInit {
-  invoices : Invoice[] = new Array<Invoice>();
+  //invoices : Invoice[] = new Array<Invoice>();
 user: User[] = new Array<User>();
+orderDetails: OrderDetail[] = new Array<OrderDetail>();
   constructor(private router: Router, private service: InvoiceService) { }
 
   ngOnInit() {
    var param= JSON.parse(localStorage.getItem('invoice'));
-    this.invoices=param;
+    this.orderDetails=param;
     console.log(param[0].orderDetail);
       }
   }
