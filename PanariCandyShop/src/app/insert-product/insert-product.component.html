@@ -12,11 +12,8 @@
                         <span class="glyphicon glyphicon-user"></span>Registrate</a>
                 </li>
                 <li>
-                    <a href="/search-login" style="color: #fff !important">
-                        <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
-                </li>
-                <li>
-                    <a href="/search-cart" style="color: #fff !important">Carrito</a>
+                    <a href="/search-login" style="color: #fff !important" (click)="close()">
+                        <span class="glyphicon glyphicon-log-in"></span>Cerrar Sesión</a>
                 </li>
             </ul>
         </div>
@@ -50,16 +47,17 @@
                         <input type="text" class="form-control" id="salesTax" placeholder="Impuesto de Ventas" required [(ngModel)]="product.salesTax">
                     </div>
                     <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <p>Categoría:</p>
                         <select [(ngModel)]="product.productCategory.productCategoryId" id="productCategoryId">
                             <option *ngFor="let cat of categories" [(ngValue)]="cat.productCategoryId">{{cat.productCategoryName}}</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Imagen:</label>
-                            <div class="panel panel-default document-panel">
+                        <div class="form-group" style="width: 190%;">
+                            <h4>Imagen:</h4>
+                            <div class="panel panel-default document-panel" style="width: 120%;">
                                 <div class="panel-heading clearfix">
-                                    <h3 class="panel-title pull-left">Seleccione una imagen</h3>
+                                    <h2 class="panel-title pull-left">Seleccione una imagen</h2>
                                 </div>
                                 <div class="file-tab panel-body">
                                     <label class="btn btn-default">

@@ -1,4 +1,4 @@
-<script src="product.component.ts"></script>
+<script src="update-products.component.ts"></script>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="/search-login" style="color: #fff !important">
+          <a href="/search-login" style="color: #fff !important" (click)="close()">
             <span class="glyphicon glyphicon-log-in"></span>Cerrar Sesión</a>
         </li>
       </ul>
@@ -36,41 +36,7 @@
     </nav>
   </div>
 </div>
-
-<div id="pricing" class="container-fluid paneles">
-  <div class="panel panel-default text-center">
-    <div class="panel-heading">
-      <h3>Listado de categorías</h3>
-    </div>
-    <div class="panel-body">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <td>Identificador</td>
-            <td>Nombre</td>
-            <td>Precio</td>
-            <td>Unidades disponibles</td>
-            <td>Descripción</td>
-            <td>Impuestos</td>
-            <td>Categoría</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of products">
-            <td>{{product.productId}}</td>
-            <td>{{product.productName}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.unitsOnStock}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.salesTax}}</td>
-            <td>{{product.productCategory.productCategoryName}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
 <div class="container-fluid bg-2 text-center">
-  <h3 class="margin">Panari's Candy Shop</h3>
-  <p>La mejor tienda de dulces al alcance de un click </p>
-</div>
+    <h3 class="margin">Panari's Candy Shop</h3>
+    <p>La mejor tienda de dulces al alcance de un click </p>
+  </div>

@@ -10,6 +10,7 @@ p {font-size: 15px;}
     background-color: #474e5d; /* Dark Blue */
     color: #ffffff;
     height: 177px;
+    margin-top: 100%;
 }
 .navbar{
     background-color: #1abc9c;

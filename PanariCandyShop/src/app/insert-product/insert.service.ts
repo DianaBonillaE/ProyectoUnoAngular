@@ -43,4 +43,8 @@ export class InsertService {
     public getCategories(){
       return this.http.get(Environment.apiUrl+'category/');
     }
+
+    public close(){
+      localStorage.setItem('sesion',null);
+    }
 }
