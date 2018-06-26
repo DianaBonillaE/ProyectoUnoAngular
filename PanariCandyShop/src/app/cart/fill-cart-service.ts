@@ -29,15 +29,30 @@ export class FillCartService {
   };
 
   public addCart() {
+
+    let formdata: FormData = new FormData();
     var param = new Array<OrderDetail>();
     param = JSON.parse(localStorage.getItem('carritoNull'));
-    localStorage.removeItem('carritoNull');
     var sesion = localStorage.getItem('sesion');
     var i;
+    var productId;
+    var units;
     for (i = 0; i < param.length; i++) {
-      return this.http.get(this.url + "addCart/" + param[i].product.productId + "/" + param[i].quantity + "/" + sesion);
+      productId += "," + param[i].product.productId;
+      units += "," + param[i].quantity;
     }
-    
+
+    formdata.append("productId", productId);
+    formdata.append("units", units);
+    formdata.append("sesion", sesion);
+
+    const req = new HttpRequest("POST", this.url + "addCart", formdata, {
+      responseType: "json"
+    });
+    return this.http.request(req);
+    //  localStorage.removeItem('carritoNull');
+    //  return this.http.post(this.url + "addCart", {params: {"orderDetails": param,"sesion": sesion}});
+
   };
 
   public getCart() {

@@ -18,23 +18,23 @@ export class CartComponent implements OnInit {
       this.orderDetails = JSON.parse(localStorage.getItem('carritoNull'));
     } else if (localStorage.getItem('carritoNull') != null) {
         this.service.addCart().subscribe(
-          (data: string) => {
-            this.confirm = data;
-            if(this.confirm==='Producto añadido con éxito'){
-              localStorage.removeItem('carritoNull');
-            }
+          data => {
+            localStorage.removeItem('carritoNull');
           }
-        )
+        );
+        this.service.getCart().subscribe((data: OrderDetail[]) => {
+          this.orderDetails = data;
+          location.href ='http://localhost:4200/search-cart';
+        }
+        );
       }
-  
-    this.service.getCart().subscribe((data: OrderDetail[]) => {
-      this.orderDetails = data;
-    }
-    );
+      this.service.getCart().subscribe((data: OrderDetail[]) => {
+        this.orderDetails = data;
+      }
+      );   
   }
 
   delete(detailId) {
-
     if (localStorage.getItem('sesion') === null) {
       var param = new Array<OrderDetail>();
     param = JSON.parse(localStorage.getItem('carritoNull'));
@@ -42,15 +42,15 @@ export class CartComponent implements OnInit {
       for (i = 0; i < param.length; i++) {
           if(param[i].orderDetail===detailId){
             console.log('entro');
-          var cont=  param.indexOf(i);
-            param.splice(cont,1);
+            param.splice(i,1);
+            
             localStorage.setItem('carritoNull',JSON.stringify(param));
             location.href ='http://localhost:4200/search-cart';
             break;
           }
       }
-      
-    } else {
+    
+  } else {
       this.service.delete(detailId).subscribe(
         (data: OrderDetail[]) => {
           this.orderDetails = data;

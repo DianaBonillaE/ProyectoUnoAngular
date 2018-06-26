@@ -17,6 +17,7 @@ export class PrincipalComponent implements OnInit {
   constructor(private router: Router, private service: FillCartService) { }
 
   ngOnInit() {
+  //  localStorage.clear();
     this.service.getAll().subscribe(
       (data: Product[]) => {
         this.products = data;
@@ -36,19 +37,19 @@ export class PrincipalComponent implements OnInit {
           if (localStorage.getItem('carritoNull') === null) {
             var orders = new Array<OrderDetail>();
             orders[0] = data;
-            console.log(data + ' order');
             localStorage.setItem('carritoNull', JSON.stringify(orders));
+            alert('Se ingresó el producto con el id: ' + data.orderDetail);
           } else {
-            var cont = localStorage.getItem('carritoNull').length;
             var orders = new Array<OrderDetail>();
             orders = JSON.parse(localStorage.getItem('carritoNull'));
+            data.orderDetail = orders[orders.length - 1].orderDetail + 1;
             orders.push(data);
+            alert('Se ingresó el producto con el id: ' + data.orderDetail);
             localStorage.setItem('carritoNull', JSON.stringify(orders));
           }
         }
       );
-    } 
-    
+    }
     else {
       this.service.add(product, units).subscribe(
         (data: OrderDetail[]) => {
