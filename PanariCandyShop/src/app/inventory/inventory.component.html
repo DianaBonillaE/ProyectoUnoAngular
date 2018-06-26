@@ -7,12 +7,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/search-register" style="color: #fff !important">
-                        <span class="glyphicon glyphicon-user"></span>Registrate</a>
-                </li>
-                <li>
                     <a href="/search-login" style="color: #fff !important">
-                        <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+                        <span class="glyphicon glyphicon-log-in"></span>Cerrar Sesión</a>
                 </li>
             </ul>
         </div>
@@ -26,34 +22,50 @@
 <br>
 <div id="pricing" class="container-fluid">
     <div class="row slideanim">
-        <div class="col-sm-4 col-xs-12"></div>
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default ">
+        <div class="col-sm-1 col-xs-12"></div>
+        <div class="col-sm-5 col-xs-12">
+            <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                    <h1>Modificar cantidad de productos en el inventario</h1>
+                    <h1>Lista de productos existentes</h1>
                 </div>
                 <div class="panel-body">
-                    <div class="form-group" style="width: 75%; margin-left: 15%">
-                        <input type="text" class="form-control" id="productName" placeholder="Nombre" required [(ngModel)]="product.productName">
+                    <div class="form-group col-xs-4">
+                        <br>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                              <th>Código</th>
+                              <th>Nombre</th>
+                              <th>Unidades almacenadas</th>
+                              <th>Descripción</th>
+                            </tr>
+                            <tr *ngFor="let product of products">
+                              <td>{{product.productId}}</td>
+                              <td>{{product.productName}}</td>
+                              <td>{{product.unitsOnStock}}</td>
+                              <td>{{product.description}}</td>
+                            </tr>
+                          </table>
                     </div>
-                    <div class="form-group" style="width: 75%; margin-left: 15%">
-                        <input type="text" class="form-control" id="price" placeholder="Precio" required [(ngModel)]="product.price">
-                    </div>
-                    <div class="form-group" style="width: 75%; margin-left: 15%">
-                        <input type="text" class="form-control" id="description" placeholder="Descripcion" required [(ngModel)]="product.description">
-                    </div>
-                    <div class="form-group" style="width: 75%; margin-left: 15%">
-                        <input type="text" class="form-control" id="salesTax" placeholder="Impuesto de Ventas" required [(ngModel)]="product.salesTax">
-                    </div>
-                    <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <select   [(ngModel)]="product.productCategory.productCategoryId" id="productCategoryId">
-                    <option *ngFor="let cat of categories" [(ngValue)]="cat.productCategoryId">{{cat.productCategoryName}}</option>
-                            </select>
-                        </div>
-                    <a type="submit" class="btn btn-ttc" (click)="createProduct()">Insertar Producto</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-xs-12"></div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default ">
+                <div class="panel-heading text-center">
+                    <h1>Ingreso de nuevos productos al inventario</h1>
+                </div>
+                <div class="panel-body">
+                    <label>Seleccione el producto que ingresara al inventario</label>
+                    <select [(ngModel)]="productId">
+                        <option *ngFor="let item of products" [ngValue]="item.productId">{{item.productName}}</option>
+                      </select>
+                    <input placeholder="cantidad de unidades" [(ngModel)]="units">
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-ttc">Editar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-12"></div>
     </div>
 </div>
