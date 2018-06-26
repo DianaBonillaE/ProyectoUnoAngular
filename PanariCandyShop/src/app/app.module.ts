@@ -20,7 +20,7 @@ import { ReportProductsComponent } from './report-products/report-products.compo
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register/register-service';
 import { ProductCategoryComponent } from './product-category/product-category.component';
-import { ProductCategoryService } from './product-category/product-category-service'; 
+import { ProductCategoryService } from './product-category/product-category.service'; 
 import { ReportProductsService } from './report-products/report-products-service';
 import { AboutComponent } from './about/about.component';
 import { HomeAdministratorComponent } from './home-administrator/home-administrator.component';

@@ -17,17 +17,16 @@
             <div class="form-group col-xs-4">
               <label>Selecione la categoria a consultar:</label>
               <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
+                  <option *ngFor="let category of getCategories()" [value]="category.productCategoryId" [(ngModel)]="categoryId">{{category.productCategoryName}}</option>
                 </select>
             </div>
             <br>
             <table>
                 <tr>
+                  <th>Código</th>
                   <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Correo</th>
-                  <th>Compras realizadas</th>
+                  <th>Precio</th>
+                  <th>Descripción</th>
                 </tr>
                 <tr>
                   <td>das</td>
