@@ -1,3 +1,115 @@
-<p>
-  product-category works!
-</p>
+<script src="product-category.component.ts"></script>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home-admin" style="color: #fff !important">Panari's Candy Shop</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/search-login" style="color: #fff !important">
+            <span class="glyphicon glyphicon-log-in"></span>Cerrar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="pricing" class="container-fluid paneles">
+  <div class="row slideanim">
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3>Inserción de categoría</h3>
+        </div>
+        <div class="panel-body">
+          <br>
+          <br>
+          <p>Nombre de la categoría a ingresar:</p>
+          <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="productCategoryName" class="form-control" id="productCategoryNameIns" placeholder="Nombre" required [(ngModel)]="productCategory.productCategoryName" name="productCategoryNameIns">
+          </div>
+          <br>
+          <br>
+        </div>
+        <div class="panel-footer">
+          <a type="submit" href="product-category" class="btn btn-ttc" id="insertar" (click)="insert()">Ingresar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3>Edición de categoría</h3>
+        </div>
+        <div class="panel-body">
+          <p>Nombre de la categoría a editar:</p>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <select [(ngModel)]="productCategory.productCategoryId" id="productCategoryIdEditar" >
+                <option *ngFor="let productCategory of productCategories" [(ngValue)]="productCategory.productCategoryId">{{productCategory.productCategoryName}}</option>
+              </select>
+            </div>
+          <p>Nombre nuevo de la categoría:</p>
+          <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="productCategoryName" class="form-control" id="productCategoryName" placeholder="Nombre" required [(ngModel)]="productCategory.productCategoryName">
+          </div>
+          <br>
+        </div>
+        <div class="panel-footer">
+          <a type="submit" href="product-category" class="btn btn-ttc" (click)="update()" id="editar">Editar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3>Eliminación de categoría</h3>
+        </div>
+        <div class="panel-body">
+          <br>
+          <br>
+          <p>Nombre de la categoría a eliminar:</p>
+          <br>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+                <select [(ngModel)]="productCategory.productCategoryId" id="productCategoryIdEliminar">
+                  <option *ngFor="let productCategory of productCategories" [(ngValue)]="productCategory.productCategoryId">{{productCategory.productCategoryName}}</option>
+                </select>
+            </div>
+          <br>
+          <br>
+          
+        </div>
+        <div class="panel-footer">
+          <a type="submit" href="product-category" class="btn btn-ttc" (click)="delete()" id="eliminar">Eliminar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3>Listado de categorías</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <td>Código</td>
+                <td>Nombre</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let productCategory of productCategories">
+                <td>{{productCategory.productCategoryId}}</td>
+                <td>{{productCategory.productCategoryName}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">Panari's Candy Shop</h3>
+  <p>La mejor tienda de dulces al alcance de un click </p>
+</div>

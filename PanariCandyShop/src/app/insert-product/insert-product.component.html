@@ -50,26 +50,26 @@
                         <input type="text" class="form-control" id="salesTax" placeholder="Impuesto de Ventas" required [(ngModel)]="product.salesTax">
                     </div>
                     <div class="form-group" style="width: 75%; margin-left: 15%">
-                            <select   [(ngModel)]="product.productCategory.productCategoryId" id="productCategoryId">
-                    <option *ngFor="let cat of categories" [(ngValue)]="cat.productCategoryId">{{cat.productCategoryName}}</option>
-                            </select>
-                        </div>
+                        <select [(ngModel)]="product.productCategory.productCategoryId" id="productCategoryId">
+                            <option *ngFor="let cat of categories" [(ngValue)]="cat.productCategoryId">{{cat.productCategoryName}}</option>
+                        </select>
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                        <label>Imagen:</label>
-                        <div class="panel panel-default document-panel">
-                        <div class="panel-heading clearfix">
-                        <h3 class="panel-title pull-left">Seleccione una imagen</h3>
+                            <label>Imagen:</label>
+                            <div class="panel panel-default document-panel">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title pull-left">Seleccione una imagen</h3>
+                                </div>
+                                <div class="file-tab panel-body">
+                                    <label class="btn btn-default">
+                                        <!-- The file is stored here. -->
+                                        <input type="file" name="file" id="file" (change)="selectFile($event)" accept="image/*">
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="file-tab panel-body">
-                        <label class="btn btn-default">
-                        <!-- The file is stored here. -->
-                        <input type="file" name="file" id="file" (change)="selectFile($event)" accept="image/*">
-                        </label>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
+                    </div>
                     <a type="submit" class="btn btn-ttc" (click)="createProduct()">Insertar Producto</a>
                 </div>
             </div>

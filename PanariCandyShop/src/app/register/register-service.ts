@@ -10,7 +10,7 @@ export class RegisterService{
         headers : new HttpHeaders({'Content-Type': 'application/json'})
     };
 
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   private requestMapping = 'auth/';
 
