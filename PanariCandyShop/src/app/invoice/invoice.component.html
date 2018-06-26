@@ -1,3 +1,68 @@
-<p>
-  invoice works!
-</p>
+<script src="cart.component.ts"></script>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/search-home" style="color: #fff !important">Panari's Candy Shop</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/search-register" style="color: #fff !important">
+                        <span class="glyphicon glyphicon-user"></span>Registrate</a>
+                </li>
+                <li>
+                    <a href="/search-login" style="color: #fff !important">
+                        <span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a>
+                </li>
+                <li>
+                    <a href="/search-cart" style="color: #fff !important">Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container" style="margin-left: 400px;">
+  <label>Factura de Pago</label>
+    <div *ngFor="let in of invoices">
+      <label>{{in.cedulaJuridica}}</label>
+      <label>{{in.address}}</label>
+      <label>{{in.dateSale}}</label>
+      <div class="row">
+<div class="col-sm-6 col-xs-12">
+
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <td>Código del producto</td>
+            <td>Cantidad</td>
+            <td>Precio</td>
+            <td>Subtotal</td>
+            <td>Nombre del producto</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{in.orderId}}</td>
+            <td>{{in.nameUser}}</td>
+            <td>{{in.productId}}</td>
+            <td>{{in.productName}}</td>
+            <td>{{in.quantity}}</td>
+            <td>{{in.subtotal}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <label>{{in.impuestos}}</label>
+  <label>{{in.total}}</label>
+</div>
+</div>
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">Panari's Candy Shop</h3>
+    <p class="footer">La mejor tienda de dulces al alcance de un click </p>
+</div>

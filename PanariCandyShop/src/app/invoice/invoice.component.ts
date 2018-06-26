@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { InvoiceService } from './invoice.service';
 import {Router} from '@angular/router';
+import { OrderDetail } from '../Models/orderDetail';
+import { User } from '../Models/user';
+import { Invoice } from '../Models/invoice';
 
 @Component({
   selector: 'app-invoice',
@@ -8,10 +11,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./invoice.component.css']
 })
 export class InvoiceComponent implements OnInit {
-
+  invoices : Invoice[] = new Array<Invoice>();
+user: User[] = new Array<User>();
   constructor(private router: Router, private service: InvoiceService) { }
 
   ngOnInit() {
+   var param= JSON.parse(localStorage.getItem('invoice'));
+    this.invoices=param;
+    console.log(param[0].orderDetail);
+      }
   }
-
-}
