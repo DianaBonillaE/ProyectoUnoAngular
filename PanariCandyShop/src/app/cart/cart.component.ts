@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Product } from '../Models/product';
 import { OrderDetail } from '../Models/orderDetail';
 import { FillCartService } from './fill-cart-service';
+import { Invoice } from '../Models/invoice';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,9 +12,14 @@ import { FillCartService } from './fill-cart-service';
 export class CartComponent implements OnInit {
   orderDetails: OrderDetail[] = new Array<OrderDetail>();
   confirm: string;
+  //invoices: Invoice[] = new Array<Invoice>();
   constructor(private router: Router, private service: FillCartService) { }
 
   ngOnInit() {
+  // localStorage.clear();
+    if(localStorage.getItem('pay')==='true'){
+      localStorage.removeItem('pay');
+    }
     if (localStorage.getItem('sesion') === null) {
       this.orderDetails = JSON.parse(localStorage.getItem('carritoNull'));
     } else if (localStorage.getItem('carritoNull') != null) {
@@ -28,10 +34,12 @@ export class CartComponent implements OnInit {
         }
         );
       }
+      if (localStorage.getItem('carritoNull') === null) {
       this.service.getCart().subscribe((data: OrderDetail[]) => {
         this.orderDetails = data;
       }
-      );   
+      ); 
+    }  
   }
 
   delete(detailId) {
@@ -60,12 +68,19 @@ export class CartComponent implements OnInit {
   }
 
   pay() {
+    if(localStorage.getItem('sesion')!=null){
     this.service.pay().subscribe(
-      (data: string) => {
-        this.confirm = data;
-        alert(this.confirm);
+      (data: OrderDetail[]) => {
+        this.orderDetails = data;
+        localStorage.removeItem('invoice');
+        localStorage.setItem('invoice',JSON.stringify(data));
+        location.href ='http://localhost:4200/invoice';
       }
-    )
+    );
+  }else{
+    localStorage.setItem('pay','true');
+    location.href ='http://localhost:4200/search-login';
   }
+}
 
 }

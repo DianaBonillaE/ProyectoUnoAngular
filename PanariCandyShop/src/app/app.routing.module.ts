@@ -17,6 +17,7 @@ import { RegisterEmployeeComponent } from './register-employee/register-employee
 import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 import { ProductCategoryComponent } from './product-category/product-category.component'
 import { InventoryComponent } from './inventory/inventory.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
     {path: 'home-employee', component: HomeEmployeeComponent},
     {path: 'product-category', component: ProductCategoryComponent},
     {path: 'inventory', component: InventoryComponent},
+    {path: 'invoice',component:InvoiceComponent}
     
    ];
 

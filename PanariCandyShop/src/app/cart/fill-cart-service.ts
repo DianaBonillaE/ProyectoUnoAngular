@@ -66,8 +66,8 @@ export class FillCartService {
   };
 
   public pay() {
-    var order = JSON.parse(localStorage.getItem('carrito'));
-    return this.http.post(this.url + "pay", order);
+    var sesion = localStorage.getItem('sesion');
+    return this.http.get(this.url+ "pay/"+sesion);
   }
 
   public getOrderDetail(prod: Product, units: string) {

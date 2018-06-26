@@ -1,10 +1,13 @@
+
+
 .btn-ttc,
 .btn-ttc:hover,
 .btn-ttc:active {
-    background-color: #1abc9c !important;
+    background-color: #69abd1 !important;
     color: snow;
     margin-left: 40%;
 }
+
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
@@ -28,7 +31,7 @@ p.footer{
  color: #ffffff;
 }
 .panel {
-    border: 1px solid #f4501ea6; 
+    border: 1px solid #37d3dfa6; 
     border-radius:0 !important;
     transition: box-shadow 0.5s;
 }
@@ -36,13 +39,13 @@ p.footer{
     box-shadow: 5px 0px 40px rgba(0,0,0, .2);
 }
 .panel-footer .btn:hover {
-    border: 1px solid #f4501ea6;
+    border: 1px solid #1eb7f4a6;
     background-color: #fff !important;
     color: #f4501ea6;
 }
 .panel-heading {
     color: #fff !important;
-    background-color: #f4501ea6 !important;
+    background-color: #1abc9c !important;
     padding: 15px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
@@ -61,19 +64,3 @@ p.footer{
     font-size: 14px;
 }
 
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}

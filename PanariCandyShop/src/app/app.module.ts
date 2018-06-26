@@ -29,6 +29,9 @@ import { RegisterEmployeeService } from './register-employee/register-employee.s
 import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ProductComponent } from './product/product.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { InvoiceService } from './invoice/invoice.service';
+import { InventoryService } from './inventory/inventory-service';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { ProductComponent } from './product/product.component';
     RegisterEmployeeComponent,
     HomeEmployeeComponent,
     InventoryComponent,
-    ProductComponent
+    ProductComponent,
+    InvoiceComponent
       ],
   imports: [
     BrowserModule,
@@ -56,7 +60,7 @@ import { ProductComponent } from './product/product.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService,HomeService,FillCartService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService,RegisterEmployeeService],
+  providers: [LoginService,HomeService,FillCartService,InsertService, ClientReportService,RegisterService,ProductCategoryService,ReportProductsService,RegisterEmployeeService,InvoiceService,InventoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
