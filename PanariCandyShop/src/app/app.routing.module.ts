@@ -16,6 +16,8 @@ import { HomeAdministratorComponent } from './home-administrator/home-administra
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 import { ProductCategoryComponent } from './product-category/product-category.component'
+import { InventoryComponent } from './inventory/inventory.component';
+
 
 const routes: Routes = [
     {path:'',redirectTo:'search-home',pathMatch:'full'},
@@ -33,6 +35,8 @@ const routes: Routes = [
     {path: 'register-employee', component: RegisterEmployeeComponent},
     {path: 'home-employee', component: HomeEmployeeComponent},
     {path: 'product-category', component: ProductCategoryComponent},
+    {path: 'inventory', component: InventoryComponent},
+    
    ];
 
 @NgModule({

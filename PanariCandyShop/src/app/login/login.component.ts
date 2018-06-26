@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
            this.router.navigateByUrl('/search-home');
          }
          else{
-           this.router.navigateByUrl('/search-cart');
+           this.router.navigateByUrl('/home-admin');
          }
        },
        error =>{

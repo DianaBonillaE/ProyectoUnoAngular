@@ -3,12 +3,12 @@ export class ClientReport{
     firstName: string;
     lastName: string;
     email: string;
-    quantity: number;
+    buys: number;
 
     constructor(firstName?: string, lastName?: string, email?: string, quantity?: number){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.quantity = quantity;
+        this.buys = quantity;
     }
 }
