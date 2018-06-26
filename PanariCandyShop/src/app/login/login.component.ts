@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
         this.role = data;
         console.log(JSON.stringify(data)+' hola')
         localStorage.setItem('sesion',this.login.email);
+        if(localStorage.getItem('pay')==='true'){
+          this.router.navigateByUrl('/search-cart');
+        }
          if(data == 'Cliente'){
            localStorage.setItem('role',data);
            this.router.navigateByUrl('/search-home');
@@ -38,7 +41,8 @@ export class LoginComponent implements OnInit {
        error =>{
          alert('Datos incorrectos');
        }
-      );
+      )
+
     };
 }
 

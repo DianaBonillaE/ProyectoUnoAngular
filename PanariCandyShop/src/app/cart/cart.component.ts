@@ -14,6 +14,9 @@ export class CartComponent implements OnInit {
   constructor(private router: Router, private service: FillCartService) { }
 
   ngOnInit() {
+    if(localStorage.getItem('pay')==='true'){
+      localStorage.removeItem('pay');
+    }
     if (localStorage.getItem('sesion') === null) {
       this.orderDetails = JSON.parse(localStorage.getItem('carritoNull'));
     } else if (localStorage.getItem('carritoNull') != null) {
@@ -60,12 +63,17 @@ export class CartComponent implements OnInit {
   }
 
   pay() {
+    if(localStorage.getItem('sesion')!=null){
     this.service.pay().subscribe(
       (data: string) => {
         this.confirm = data;
         alert(this.confirm);
       }
-    )
+    );
+  }else{
+    localStorage.setItem('pay','true');
+    location.href ='http://localhost:4200/search-login';
   }
+}
 
 }
